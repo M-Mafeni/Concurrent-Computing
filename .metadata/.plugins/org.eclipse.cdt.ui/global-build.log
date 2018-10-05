@@ -1,0 +1,629 @@
+15:33:59 **** Build of configuration Default for project helloXC ****
+xmake CONFIG=Default all 
+xmake: *** No rule to make target `all'.  Stop.
+15:33:59 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+../src/parallelAnts.xc:27:9: warning: unused variable `grid' [-Wunused-variable]
+    int grid[3][4] = {{10,0,1,7},{2,10,0,3},{6,8,7,6}};
+        ^~~~~~~~~~
+../src/parallelAnts.xc:28:9: warning: unused variable `ant1' [-Wunused-variable]
+    Ant ant1 = {{1,0}, 5};
+        ^~~~
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+../src/parallelAnts.xc:27:9: warning: unused variable `grid' [-Wunused-variable]
+    int grid[3][4] = {{10,0,1,7},{2,10,0,3},{6,8,7,6}};
+        ^~~~~~~~~~
+../src/parallelAnts.xc:28:9: warning: unused variable `ant1' [-Wunused-variable]
+    Ant ant1 = {{1,0}, 5};
+        ^~~~
+Creating parallelAnts.xe
+Build Complete
+15:37:41 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:37:41 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+../src/parallelAnts.xc:27:9: warning: unused variable `grid' [-Wunused-variable]
+    int grid[3][4] = {{10,0,1,7},{2,10,0,3},{6,8,7,6}};
+        ^~~~~~~~~~
+../src/parallelAnts.xc:28:9: warning: unused variable `ant1' [-Wunused-variable]
+    Ant ant1 = {{0,1}, 0};
+        ^~~~
+../src/parallelAnts.xc:29:9: warning: unused variable `ant2' [-Wunused-variable]
+    Ant ant2 = {{1,2}, 0};
+        ^~~~
+../src/parallelAnts.xc:30:9: warning: unused variable `ant3' [-Wunused-variable]
+    Ant ant3 = {{0,2}, 0};
+        ^~~~
+../src/parallelAnts.xc:31:9: warning: unused variable `ant4' [-Wunused-variable]
+    Ant ant4 = {{1,0}, 0};
+        ^~~~
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+../src/parallelAnts.xc:27:9: warning: unused variable `grid' [-Wunused-variable]
+    int grid[3][4] = {{10,0,1,7},{2,10,0,3},{6,8,7,6}};
+        ^~~~~~~~~~
+../src/parallelAnts.xc:28:9: warning: unused variable `ant1' [-Wunused-variable]
+    Ant ant1 = {{0,1}, 0};
+        ^~~~
+../src/parallelAnts.xc:29:9: warning: unused variable `ant2' [-Wunused-variable]
+    Ant ant2 = {{1,2}, 0};
+        ^~~~
+../src/parallelAnts.xc:30:9: warning: unused variable `ant3' [-Wunused-variable]
+    Ant ant3 = {{0,2}, 0};
+        ^~~~
+../src/parallelAnts.xc:31:9: warning: unused variable `ant4' [-Wunused-variable]
+    Ant ant4 = {{1,0}, 0};
+        ^~~~
+Creating parallelAnts.xe
+Build Complete
+16:03:16 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:03:17 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+../src/parallelAnts.xc:26:18: error: array type has incomplete element type
+void antMove(int grid[][], Ant a) {
+                 ^~~~~~~~
+../src/parallelAnts.xc:41:14: error: array type has incomplete element type
+void ant(int grid[][], Ant a, Position p) {
+             ^~~~~~~~
+../src/parallelAnts.xc:48:17: warning: braces around scalar initializer [-Wunusual-code]
+    Ant ant1 = {{0,1}, 0, 1};
+                ^~~~~
+../src/parallelAnts.xc:48:17: warning: excess elements in scalar initializer [-Wunusual-code]
+    Ant ant1 = {{0,1}, 0, 1};
+                ^~~~~
+../src/parallelAnts.xc:48:24: warning: missing braces around initializer [-Wmissing-braces]
+    Ant ant1 = {{0,1}, 0, 1};
+                       ^
+../src/parallelAnts.xc:49:17: warning: braces around scalar initializer [-Wunusual-code]
+    Ant ant2 = {{1,2}, 0, 2};
+                ^~~~~
+../src/parallelAnts.xc:49:17: warning: excess elements in scalar initializer [-Wunusual-code]
+    Ant ant2 = {{1,2}, 0, 2};
+                ^~~~~
+../src/parallelAnts.xc:49:24: warning: missing braces around initializer [-Wmissing-braces]
+    Ant ant2 = {{1,2}, 0, 2};
+                       ^
+../src/parallelAnts.xc:50:17: warning: braces around scalar initializer [-Wunusual-code]
+    Ant ant3 = {{0,2}, 0, 3};
+                ^~~~~
+../src/parallelAnts.xc:50:17: warning: excess elements in scalar initializer [-Wunusual-code]
+    Ant ant3 = {{0,2}, 0, 3};
+                ^~~~~
+../src/parallelAnts.xc:50:24: warning: missing braces around initializer [-Wmissing-braces]
+    Ant ant3 = {{0,2}, 0, 3};
+                       ^
+../src/parallelAnts.xc:51:17: warning: braces around scalar initializer [-Wunusual-code]
+    Ant ant4 = {{1,0}, 0, 4};
+                ^~~~~
+../src/parallelAnts.xc:51:17: warning: excess elements in scalar initializer [-Wunusual-code]
+    Ant ant4 = {{1,0}, 0, 4};
+                ^~~~~
+../src/parallelAnts.xc:51:24: warning: missing braces around initializer [-Wmissing-braces]
+    Ant ant4 = {{1,0}, 0, 4};
+                       ^
+../src/parallelAnts.xc:49:9: warning: unused variable `ant2' [-Wunused-variable]
+    Ant ant2 = {{1,2}, 0, 2};
+        ^~~~
+../src/parallelAnts.xc:50:9: warning: unused variable `ant3' [-Wunused-variable]
+    Ant ant3 = {{0,2}, 0, 3};
+        ^~~~
+../src/parallelAnts.xc:51:9: warning: unused variable `ant4' [-Wunused-variable]
+    Ant ant4 = {{1,0}, 0, 4};
+        ^~~~
+xmake[1]: *** [.build/src/parallelAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:04:19 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:04:19 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+../src/parallelAnts.xc:26:18: error: array type has incomplete element type
+void antMove(int grid[][], Ant a) {
+                 ^~~~~~~~
+../src/parallelAnts.xc:41:14: error: array type has incomplete element type
+void ant(int grid[][], Ant a, Position p) {
+             ^~~~~~~~
+../src/parallelAnts.xc:49:9: warning: unused variable `ant2' [-Wunused-variable]
+    Ant ant2 = {2, {1,2}, 0};
+        ^~~~
+../src/parallelAnts.xc:50:9: warning: unused variable `ant3' [-Wunused-variable]
+    Ant ant3 = {3, {0,2}, 0};
+        ^~~~
+../src/parallelAnts.xc:51:9: warning: unused variable `ant4' [-Wunused-variable]
+    Ant ant4 = {4, {1,0}, 0};
+        ^~~~
+xmake[1]: *** [.build/src/parallelAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:05:03 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:05:03 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+../src/parallelAnts.xc:49:9: warning: unused variable `ant2' [-Wunused-variable]
+    Ant ant2 = {2, {1,2}, 0};
+        ^~~~
+../src/parallelAnts.xc:50:9: warning: unused variable `ant3' [-Wunused-variable]
+    Ant ant3 = {3, {0,2}, 0};
+        ^~~~
+../src/parallelAnts.xc:51:9: warning: unused variable `ant4' [-Wunused-variable]
+    Ant ant4 = {4, {1,0}, 0};
+        ^~~~
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+../src/parallelAnts.xc:49:9: warning: unused variable `ant2' [-Wunused-variable]
+    Ant ant2 = {2, {1,2}, 0};
+        ^~~~
+../src/parallelAnts.xc:50:9: warning: unused variable `ant3' [-Wunused-variable]
+    Ant ant3 = {3, {0,2}, 0};
+        ^~~~
+../src/parallelAnts.xc:51:9: warning: unused variable `ant4' [-Wunused-variable]
+    Ant ant4 = {4, {1,0}, 0};
+        ^~~~
+Creating parallelAnts.xe
+Build Complete
+16:11:11 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:11:11 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+../src/parallelAnts.xc:51:9: warning: unused variable `ant2' [-Wunused-variable]
+    Ant ant2 = {2, {1,2}, 0};
+        ^~~~
+../src/parallelAnts.xc:52:9: warning: unused variable `ant3' [-Wunused-variable]
+    Ant ant3 = {3, {0,2}, 0};
+        ^~~~
+../src/parallelAnts.xc:53:9: warning: unused variable `ant4' [-Wunused-variable]
+    Ant ant4 = {4, {1,0}, 0};
+        ^~~~
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+../src/parallelAnts.xc:51:9: warning: unused variable `ant2' [-Wunused-variable]
+    Ant ant2 = {2, {1,2}, 0};
+        ^~~~
+../src/parallelAnts.xc:52:9: warning: unused variable `ant3' [-Wunused-variable]
+    Ant ant3 = {3, {0,2}, 0};
+        ^~~~
+../src/parallelAnts.xc:53:9: warning: unused variable `ant4' [-Wunused-variable]
+    Ant ant4 = {4, {1,0}, 0};
+        ^~~~
+Creating parallelAnts.xe
+Build Complete
+16:13:28 **** Incremental Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+../src/parallelAnts.xc:55:5: error: use of `grid' violates parallel usage rules
+    par {
+    ^~~
+../src/parallelAnts.xc:56:13: note: violation occurs here
+        ant(grid, ant1, ant1.p);
+            ^~~~
+../src/parallelAnts.xc:57:13: note: violation occurs here
+        ant(grid, ant2, ant2.p);
+            ^~~~
+xmake[1]: *** [.build/src/parallelAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:13:37 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:13:37 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+../src/parallelAnts.xc:55:5: error: use of `grid' violates parallel usage rules
+    par {
+    ^~~
+../src/parallelAnts.xc:56:13: note: violation occurs here
+        ant(grid, ant1, ant1.p);
+            ^~~~
+../src/parallelAnts.xc:57:13: note: violation occurs here
+        ant(grid, ant2, ant2.p);
+            ^~~~
+xmake[1]: *** [.build/src/parallelAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:14:15 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:14:16 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+../src/parallelAnts.xc:55:5: error: use of `grid' violates parallel usage rules
+    par{
+    ^~~
+../src/parallelAnts.xc:56:13: note: violation occurs here
+        ant(grid, ant1, ant1.p);
+            ^~~~
+../src/parallelAnts.xc:57:13: note: violation occurs here
+        ant(grid, ant2, ant2.p);
+            ^~~~
+xmake[1]: *** [.build/src/parallelAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:18:16 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:18:16 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+../src/parallelAnts.xc:56:13: error: passing arg 1 of `ant' discards const qualifier from reference target type
+        ant(grid, ant1, ant1.p);
+            ^~~~
+../src/parallelAnts.xc:57:13: error: passing arg 1 of `ant' discards const qualifier from reference target type
+        ant(grid, ant2, ant2.p);
+            ^~~~
+../src/parallelAnts.xc:58:13: error: passing arg 1 of `ant' discards const qualifier from reference target type
+        ant(grid, ant3, ant3.p);
+            ^~~~
+../src/parallelAnts.xc:59:13: error: passing arg 1 of `ant' discards const qualifier from reference target type
+        ant(grid, ant4, ant4.p);
+            ^~~~
+xmake[1]: *** [.build/src/parallelAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:18:44 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:18:44 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+16:20:44 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:20:44 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+16:25:09 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:25:38 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+16:27:23 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:27:23 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+16:27:33 **** Incremental Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//parallelAnts.xe' is up to date.
+Build Complete
+16:29:00 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//parallelAnts.xe' is up to date.
+Build Complete
+16:31:52 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:31:52 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+16:32:00 **** Incremental Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//parallelAnts.xe' is up to date.
+Build Complete
+16:35:52 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:35:52 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+16:35:58 **** Incremental Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//parallelAnts.xe' is up to date.
+Build Complete
+16:46:05 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:46:05 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+16:46:09 **** Incremental Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//parallelAnts.xe' is up to date.
+Build Complete
+16:51:34 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:51:34 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+16:51:42 **** Incremental Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//parallelAnts.xe' is up to date.
+Build Complete
+16:52:39 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:52:39 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+16:52:42 **** Incremental Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//parallelAnts.xe' is up to date.
+Build Complete
+16:59:27 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:59:27 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+../src/parallelAnts.xc:58:23: error: parse error before "ant3"
+        ant3 = (grid, ant3);
+                      ^
+../src/parallelAnts.xc:59:23: error: parse error before "ant4"
+        ant4 = (grid, ant4);
+                      ^
+xmake[1]: *** [.build/src/parallelAnts.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:59:42 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:59:42 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+16:59:45 **** Incremental Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//parallelAnts.xe' is up to date.
+Build Complete
+17:00:05 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:00:05 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+17:00:08 **** Incremental Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//parallelAnts.xe' is up to date.
+Build Complete
+17:01:26 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:01:26 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+17:01:29 **** Incremental Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//parallelAnts.xe' is up to date.
+Build Complete
+17:01:49 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:01:49 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+17:01:52 **** Incremental Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//parallelAnts.xe' is up to date.
+Build Complete
+17:07:02 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:07:02 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+17:07:09 **** Incremental Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//parallelAnts.xe' is up to date.
+Build Complete
+17:08:31 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2nd Year/Concurrent/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:08:31 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+17:08:41 **** Incremental Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//parallelAnts.xe' is up to date.
+Build Complete

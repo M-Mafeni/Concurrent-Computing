@@ -1,0 +1,58 @@
+/*
+ * parallelAnts.xc
+ *
+ *  Created on: Oct 5, 2018
+ *      Author: ainesh1998
+ */
+
+#include <platform.h>
+#include <stdio.h>
+
+// Ant position
+struct Position {
+    int row;
+    int col;
+};
+typedef struct Position Position;
+
+// Ant data structure
+struct Ant {
+    int id;
+    Position p;
+    int foodCounter;
+};
+typedef struct Ant Ant;
+
+void antMove(int grid[][], Ant a) {
+    int modRow = (a.p.row+1)%4;
+    int modCol = (a.p.col+1)%4;
+    if (grid[modRow][a.p.col] > grid[a.p.row][modCol]) {
+        a.foodCounter += grid[modRow][a.p.col];
+        a.p.row = modRow;
+    }
+    else {
+        a.foodCounter += grid[a.p.row][modCol];
+        a.p.col = modCol;
+    }
+    printf("Food counter");
+}
+
+
+void ant(int grid[][], Ant a, Position p) {
+
+
+}
+
+int main(void){
+    int grid[3][4] = {{10,0,1,7},{2,10,0,3},{6,8,7,6}};
+    Ant ant1 = {1, {0,1}, 0};
+    Ant ant2 = {2, {1,2}, 0};
+    Ant ant3 = {3, {0,2}, 0};
+    Ant ant4 = {4, {1,0}, 0};
+
+    par {
+        ant(grid, ant1, ant1.p);
+    }
+
+    return 0;
+}

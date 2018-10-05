@@ -1,0 +1,27 @@
+/*
+ * parallelAnts.xc
+ *
+ *  Created on: Oct 5, 2018
+ *      Author: ainesh1998
+ */
+
+#include <platform.h>
+#include <stdio.h>
+
+// Ant position
+struct Position {
+    int x;
+    int y;
+};
+
+// Ant data structure
+struct Ant {
+    Position p;
+    int foodCounter;
+};
+
+
+int main(void){
+    int grid[3][4] = {{10,0,1,7},{2,10,0,3},{6,8,7,6}};
+    return 0;
+}
