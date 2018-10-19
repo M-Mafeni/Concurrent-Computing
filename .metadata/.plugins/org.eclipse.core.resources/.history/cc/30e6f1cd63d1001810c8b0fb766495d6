@@ -1,0 +1,51 @@
+//mix.xc
+#include <platform.h>
+#include <stdio.h>
+
+//define a communication interface i
+typedef interface i {
+  void f(int x);
+  void g();
+} i;
+
+//server providing interface and channelend
+void myServer(server i myInterface,
+              chanend c) {
+  int serving = 1;
+  int data;
+  while (serving)
+    select {
+      case c :> data:
+        printf("Channel has %d \n", data);
+        c <: data;
+        break;
+      case myInterface.f(int x):
+        printf("f got data: %d \n", x);
+        break;
+      case myInterface.g():
+        printf("g was called\n");
+        serving = 0;
+        break;
+  }
+}
+
+//client task calling functions + doing channel com
+void myClient(client i myInterface, chanend c) {
+  int value;
+  myInterface.f(1);
+  c <: 5;
+  c :> value;
+  printf("Channel returned %d \n", value);
+  myInterface.g();
+}
+
+//main starting two threads calling over interfaces and channel
+int main() {
+  interface i myInterface;
+  chan c;
+  par {
+    on tile[0]: myServer(myInterface,c);
+    on tile[1]: myClient(myInterface,c);
+  }
+  return 0;
+}

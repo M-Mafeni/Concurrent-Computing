@@ -1,0 +1,43 @@
+//dataexchange.xc
+#include <platform.h>
+#include <stdio.h>
+
+//define a communication interface i
+typedef interface i {
+  int f(int a[]);
+  void g();
+} i;
+
+//server task providing functionality of i
+void myServer(server i myInterface) {
+  int serving = 1;
+  while (serving)
+    select {
+      case myInterface.f(int a[]) -> int returnval:
+        printf("f receives: %d \n", a[0],a[1]);
+        a[1] = a[0]*2;
+        returnval = a[0];
+        break;
+      case myInterface.g():
+        printf("g was called\n");
+        serving = 0;
+        break;
+} }
+
+//client task calling functions
+void myClient(client i myInterface) {
+  int a[2] = {1,0};
+  printf("f returns: %d \n", myInterface.f(a));
+  printf("a[1] set to: %d \n", a[1]);
+  myInterface.g();
+}
+
+//main starting two threads
+int main() {
+  interface i myInterface;
+  par {
+    on tile[0]: myServer(myInterface);
+    on tile[1]: myClient(myInterface);
+  }
+  return 0;
+}

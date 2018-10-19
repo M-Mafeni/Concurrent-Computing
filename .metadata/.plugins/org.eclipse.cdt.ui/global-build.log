@@ -2873,3 +2873,43 @@ xmake CONFIG=Default clean
 Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
 rm -rf './bin/'
 rm -rf '.build'
+16:59:56 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:59:56 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:59:56 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:59:56 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+17:01:38 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+17:01:38 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:01:38 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:01:38 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
