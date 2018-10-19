@@ -627,3 +627,2249 @@ Checking build modules
 No build modules used.
 xmake[1]: `bin//parallelAnts.xe' is up to date.
 Build Complete
+12:30:22 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+12:30:22 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+12:30:26 **** Incremental Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//parallelAnts.xe' is up to date.
+Build Complete
+12:30:38 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:34:28 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:34:28 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:34:38 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+15:34:40 **** Build of configuration Default for project queenAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing queenAnt.xc
+Propagating analysis
+Creating dependencies for queenAnt.xc
+Compiling queenAnt.xc
+Creating parallelAnts.xe
+Build Complete
+15:34:46 **** Incremental Build of configuration Default for project queenAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//parallelAnts.xe' is up to date.
+Build Complete
+15:35:44 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:35:44 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:35:48 **** Build of configuration Default for project queenAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing queenAnt.xc
+Propagating analysis
+Creating dependencies for queenAnt.xc
+Compiling queenAnt.xc
+Creating parallelAnts.xe
+Build Complete
+15:36:02 **** Incremental Build of configuration Default for project queenAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//parallelAnts.xe' is up to date.
+Build Complete
+15:36:30 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:36:30 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:36:33 **** Build of configuration Default for project queenAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing queenAnt.xc
+Propagating analysis
+Creating dependencies for queenAnt.xc
+Compiling queenAnt.xc
+Creating parallelAnts.xe
+Build Complete
+11:34:36 **** Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+11:34:43 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//sandbox.xe' is up to date.
+Build Complete
+17:46:23 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:46:23 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:46:23 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+17:46:29 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:46:29 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:46:29 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+17:46:29 **** Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+17:46:33 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//sandbox.xe' is up to date.
+Build Complete
+17:50:15 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:50:15 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:50:15 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+17:50:15 **** Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+17:50:18 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//sandbox.xe' is up to date.
+Build Complete
+17:52:02 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:52:02 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:52:02 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+17:52:02 **** Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+17:52:17 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//sandbox.xe' is up to date.
+Build Complete
+18:02:32 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+18:02:32 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+18:02:33 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+18:02:33 **** Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+18:02:36 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//sandbox.xe' is up to date.
+Build Complete
+18:03:19 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+18:03:20 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+18:03:20 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+18:03:20 **** Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+18:03:26 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//sandbox.xe' is up to date.
+Build Complete
+18:08:06 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+18:19:33 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+18:19:33 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+18:19:33 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+18:19:34 **** Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+../src/sandbox.xc:30:44: error: use of undeclared identifer `a'
+  printf("f returns: %d \n", myInterface.f(a));
+                                           ^
+../src/sandbox.xc:39:5: error: declaration statement in 'par' statement
+    int a[2] = {1,0};
+    ^
+../src/sandbox.xc:39:5: error: components of multi-tile par must have `on' specifier or call a service
+../src/sandbox.xc:39:9: warning: unused variable `a' [-Wunused-variable]
+    int a[2] = {1,0};
+        ^~~~
+xmake[1]: *** [.build/src/sandbox.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+18:19:54 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+18:19:54 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+18:19:54 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+18:19:54 **** Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+../src/sandbox.xc:30:44: error: use of undeclared identifer `a'
+  printf("f returns: %d \n", myInterface.f(a));
+                                           ^
+../src/sandbox.xc:38:3: error: only local variables of type chan or interface are allowed in a multi-tile main
+  int a[2] = {1,0};
+  ^~~~~~~~
+../src/sandbox.xc:38:7: warning: unused variable `a' [-Wunused-variable]
+  int a[2] = {1,0};
+      ^~~~
+xmake[1]: *** [.build/src/sandbox.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+18:29:19 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+18:29:19 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+18:29:19 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+18:29:19 **** Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+18:29:22 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//sandbox.xe' is up to date.
+Build Complete
+19:08:21 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+19:12:46 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+../src/sandbox.xc:21:9: error: invalid lvalue in assignment
+        a = data;
+        ^
+../src/sandbox.xc:21:11: error: incompatible types in assignment
+        a = data;
+        ~~^~~~~~
+xmake[1]: *** [.build/src/sandbox.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+19:13:22 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+19:18:47 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+19:21:31 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+19:23:18 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//sandbox.xe' is up to date.
+Build Complete
+19:23:31 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//sandbox.xe' is up to date.
+Build Complete
+19:27:08 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+19:32:10 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+19:35:07 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+19:36:40 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+19:51:37 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+10:33:32 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+10:33:33 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+10:33:33 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+10:33:33 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+10:33:33 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+../src/defenderGame.xc:120:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition = 0;   //the next attempted defender position after considering button
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:121:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden;                       //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:137:7: warning: unused variable `moveCounter' [-Wunused-variable]
+  int moveCounter = 0;                       //moves of attacker so far
+      ^~~~~~~~~~~
+../src/defenderGame.xc:139:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition;         //the next attempted  position after considering move direction
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:140:7: warning: unused variable `currentDirection' [-Wunused-variable]
+  int currentDirection = 1;                  //the current direction the attacker is moving
+      ^~~~~~~~~~~~~~~~
+../src/defenderGame.xc:141:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden = 0;                     //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:161:16: warning: unused variable `lastReportedUserAntPosition' [-Wunused-variable]
+  unsigned int lastReportedUserAntPosition = 11;      //position last reported by userAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:162:16: warning: unused variable `lastReportedAttackerAntPosition' [-Wunused-variable]
+  unsigned int lastReportedAttackerAntPosition = 5;   //position last reported by attackerAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+../src/defenderGame.xc:120:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition = 0;   //the next attempted defender position after considering button
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:121:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden;                       //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:137:7: warning: unused variable `moveCounter' [-Wunused-variable]
+  int moveCounter = 0;                       //moves of attacker so far
+      ^~~~~~~~~~~
+../src/defenderGame.xc:139:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition;         //the next attempted  position after considering move direction
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:140:7: warning: unused variable `currentDirection' [-Wunused-variable]
+  int currentDirection = 1;                  //the current direction the attacker is moving
+      ^~~~~~~~~~~~~~~~
+../src/defenderGame.xc:141:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden = 0;                     //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:161:16: warning: unused variable `lastReportedUserAntPosition' [-Wunused-variable]
+  unsigned int lastReportedUserAntPosition = 11;      //position last reported by userAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:162:16: warning: unused variable `lastReportedAttackerAntPosition' [-Wunused-variable]
+  unsigned int lastReportedAttackerAntPosition = 5;   //position last reported by attackerAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating defenderGame.xe
+Build Complete
+10:33:40 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:04:26 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+../src/defenderGame.xc:120:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition = 0;   //the next attempted defender position after considering button
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:121:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden;                       //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:137:7: warning: unused variable `moveCounter' [-Wunused-variable]
+  int moveCounter = 0;                       //moves of attacker so far
+      ^~~~~~~~~~~
+../src/defenderGame.xc:139:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition;         //the next attempted  position after considering move direction
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:140:7: warning: unused variable `currentDirection' [-Wunused-variable]
+  int currentDirection = 1;                  //the current direction the attacker is moving
+      ^~~~~~~~~~~~~~~~
+../src/defenderGame.xc:141:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden = 0;                     //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:161:16: warning: unused variable `lastReportedUserAntPosition' [-Wunused-variable]
+  unsigned int lastReportedUserAntPosition = 11;      //position last reported by userAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:162:16: warning: unused variable `lastReportedAttackerAntPosition' [-Wunused-variable]
+  unsigned int lastReportedAttackerAntPosition = 5;   //position last reported by attackerAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+../src/defenderGame.xc:120:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition = 0;   //the next attempted defender position after considering button
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:121:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden;                       //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:137:7: warning: unused variable `moveCounter' [-Wunused-variable]
+  int moveCounter = 0;                       //moves of attacker so far
+      ^~~~~~~~~~~
+../src/defenderGame.xc:139:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition;         //the next attempted  position after considering move direction
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:140:7: warning: unused variable `currentDirection' [-Wunused-variable]
+  int currentDirection = 1;                  //the current direction the attacker is moving
+      ^~~~~~~~~~~~~~~~
+../src/defenderGame.xc:141:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden = 0;                     //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:161:16: warning: unused variable `lastReportedUserAntPosition' [-Wunused-variable]
+  unsigned int lastReportedUserAntPosition = 11;      //position last reported by userAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:162:16: warning: unused variable `lastReportedAttackerAntPosition' [-Wunused-variable]
+  unsigned int lastReportedAttackerAntPosition = 5;   //position last reported by attackerAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating defenderGame.xe
+Build Complete
+14:12:20 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:14:50 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:17:00 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:17:06 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+14:17:07 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+14:17:07 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+14:17:07 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+14:17:07 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+../src/defenderGame.xc:120:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition = 0;   //the next attempted defender position after considering button
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:121:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden;                       //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:137:7: warning: unused variable `moveCounter' [-Wunused-variable]
+  int moveCounter = 0;                       //moves of attacker so far
+      ^~~~~~~~~~~
+../src/defenderGame.xc:139:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition;         //the next attempted  position after considering move direction
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:140:7: warning: unused variable `currentDirection' [-Wunused-variable]
+  int currentDirection = 1;                  //the current direction the attacker is moving
+      ^~~~~~~~~~~~~~~~
+../src/defenderGame.xc:141:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden = 0;                     //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:161:16: warning: unused variable `lastReportedUserAntPosition' [-Wunused-variable]
+  unsigned int lastReportedUserAntPosition = 11;      //position last reported by userAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:162:16: warning: unused variable `lastReportedAttackerAntPosition' [-Wunused-variable]
+  unsigned int lastReportedAttackerAntPosition = 5;   //position last reported by attackerAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+../src/defenderGame.xc:120:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition = 0;   //the next attempted defender position after considering button
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:121:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden;                       //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:137:7: warning: unused variable `moveCounter' [-Wunused-variable]
+  int moveCounter = 0;                       //moves of attacker so far
+      ^~~~~~~~~~~
+../src/defenderGame.xc:139:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition;         //the next attempted  position after considering move direction
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:140:7: warning: unused variable `currentDirection' [-Wunused-variable]
+  int currentDirection = 1;                  //the current direction the attacker is moving
+      ^~~~~~~~~~~~~~~~
+../src/defenderGame.xc:141:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden = 0;                     //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:161:16: warning: unused variable `lastReportedUserAntPosition' [-Wunused-variable]
+  unsigned int lastReportedUserAntPosition = 11;      //position last reported by userAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:162:16: warning: unused variable `lastReportedAttackerAntPosition' [-Wunused-variable]
+  unsigned int lastReportedAttackerAntPosition = 5;   //position last reported by attackerAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating defenderGame.xe
+Build Complete
+14:17:17 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:18:06 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:19:28 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:30:03 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:30:30 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+14:30:30 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+14:30:30 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+14:30:30 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+14:30:37 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+../src/defenderGame.xc:120:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition = 0;   //the next attempted defender position after considering button
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:121:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden;                       //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:137:7: warning: unused variable `moveCounter' [-Wunused-variable]
+  int moveCounter = 0;                       //moves of attacker so far
+      ^~~~~~~~~~~
+../src/defenderGame.xc:139:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition;         //the next attempted  position after considering move direction
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:140:7: warning: unused variable `currentDirection' [-Wunused-variable]
+  int currentDirection = 1;                  //the current direction the attacker is moving
+      ^~~~~~~~~~~~~~~~
+../src/defenderGame.xc:141:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden = 0;                     //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:161:16: warning: unused variable `lastReportedUserAntPosition' [-Wunused-variable]
+  unsigned int lastReportedUserAntPosition = 11;      //position last reported by userAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:162:16: warning: unused variable `lastReportedAttackerAntPosition' [-Wunused-variable]
+  unsigned int lastReportedAttackerAntPosition = 5;   //position last reported by attackerAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+../src/defenderGame.xc:120:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition = 0;   //the next attempted defender position after considering button
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:121:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden;                       //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:137:7: warning: unused variable `moveCounter' [-Wunused-variable]
+  int moveCounter = 0;                       //moves of attacker so far
+      ^~~~~~~~~~~
+../src/defenderGame.xc:139:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition;         //the next attempted  position after considering move direction
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:140:7: warning: unused variable `currentDirection' [-Wunused-variable]
+  int currentDirection = 1;                  //the current direction the attacker is moving
+      ^~~~~~~~~~~~~~~~
+../src/defenderGame.xc:141:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden = 0;                     //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+../src/defenderGame.xc:161:16: warning: unused variable `lastReportedUserAntPosition' [-Wunused-variable]
+  unsigned int lastReportedUserAntPosition = 11;      //position last reported by userAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:162:16: warning: unused variable `lastReportedAttackerAntPosition' [-Wunused-variable]
+  unsigned int lastReportedAttackerAntPosition = 5;   //position last reported by attackerAnt
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating defenderGame.xe
+Build Complete
+14:30:57 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:31:26 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:33:29 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:33:44 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:34:10 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:34:55 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:35:21 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:35:41 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:36:41 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:36:47 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:37:10 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+14:59:00 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+14:59:00 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+14:59:00 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+14:59:00 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+14:59:00 **** Build of configuration Default for project queenAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing queenAnt.xc
+../src/queenAnt.xc:68:13: error: output to a variable that is neither a channel nor port
+            command <: workerChannel;
+            ^~~~~~~
+xmake[1]: *** [.build/src/queenAnt.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:59:27 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+14:59:27 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+14:59:27 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+14:59:27 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+14:59:27 **** Build of configuration Default for project queenAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing queenAnt.xc
+Propagating analysis
+Creating dependencies for queenAnt.xc
+Compiling queenAnt.xc
+Creating parallelAnts.xe
+Build Complete
+15:01:47 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+15:01:48 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:01:48 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:01:48 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+15:01:48 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+../src/defenderGame.xc:142:7: warning: unused variable `moveCounter' [-Wunused-variable]
+  int moveCounter = 0;                       //moves of attacker so far
+      ^~~~~~~~~~~
+../src/defenderGame.xc:144:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition;         //the next attempted  position after considering move direction
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:145:7: warning: unused variable `currentDirection' [-Wunused-variable]
+  int currentDirection = 1;                  //the current direction the attacker is moving
+      ^~~~~~~~~~~~~~~~
+../src/defenderGame.xc:146:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden = 0;                     //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+../src/defenderGame.xc:142:7: warning: unused variable `moveCounter' [-Wunused-variable]
+  int moveCounter = 0;                       //moves of attacker so far
+      ^~~~~~~~~~~
+../src/defenderGame.xc:144:16: warning: unused variable `attemptedAntPosition' [-Wunused-variable]
+  unsigned int attemptedAntPosition;         //the next attempted  position after considering move direction
+               ^~~~~~~~~~~~~~~~~~~~
+../src/defenderGame.xc:145:7: warning: unused variable `currentDirection' [-Wunused-variable]
+  int currentDirection = 1;                  //the current direction the attacker is moving
+      ^~~~~~~~~~~~~~~~
+../src/defenderGame.xc:146:7: warning: unused variable `moveForbidden' [-Wunused-variable]
+  int moveForbidden = 0;                     //the verdict of the controller if move is allowed
+      ^~~~~~~~~~~~~
+Creating defenderGame.xe
+Build Complete
+15:15:39 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+15:15:39 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:15:39 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:15:39 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+15:15:39 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+../src/defenderGame.xc:142:7: warning: unused variable `moveCounter' [-Wunused-variable]
+  int moveCounter = 0;                       //moves of attacker so far
+      ^~~~~~~~~~~
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+../src/defenderGame.xc:142:7: warning: unused variable `moveCounter' [-Wunused-variable]
+  int moveCounter = 0;                       //moves of attacker so far
+      ^~~~~~~~~~~
+Creating defenderGame.xe
+Build Complete
+15:20:54 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+15:20:54 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:20:54 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:20:54 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+15:20:54 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+15:22:45 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:23:14 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:24:22 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:24:45 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:25:36 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+15:25:36 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:25:36 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:25:36 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+15:26:40 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+15:29:59 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:30:28 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:30:47 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:31:12 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+15:31:12 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:31:12 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:31:12 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+15:31:37 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+15:32:51 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:33:02 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+15:33:02 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:33:02 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:33:02 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+15:33:20 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+15:34:15 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+15:34:15 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:34:15 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:34:16 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+15:34:16 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+15:34:21 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:35:47 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+15:35:47 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:35:47 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:35:47 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+15:36:15 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+15:36:15 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:36:15 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:36:15 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+15:36:19 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+15:36:38 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+15:36:38 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:36:38 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:36:39 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+15:36:59 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+15:38:41 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+15:38:41 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:38:41 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:38:41 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+15:38:44 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+15:40:08 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+15:40:08 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:40:08 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:40:08 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+15:40:08 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+15:40:13 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:40:42 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+15:40:42 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:40:43 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:40:43 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+15:40:43 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+15:40:46 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:42:51 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+15:42:52 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:42:52 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:42:52 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+15:42:52 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+15:42:57 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:43:44 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:44:10 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:48:05 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:48:30 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:49:13 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:49:37 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:49:59 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:50:14 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:58:37 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+15:58:37 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:58:37 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+15:58:37 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+15:58:38 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+15:58:41 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:58:54 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+15:59:48 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+16:00:42 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+16:03:35 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+16:03:50 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+16:05:05 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+16:06:23 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:06:23 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:06:24 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:06:24 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+16:06:24 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+16:06:30 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+16:06:54 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+16:09:51 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:09:51 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:09:52 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:09:52 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+16:09:52 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+16:11:30 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:11:30 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:11:30 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:11:30 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+16:11:30 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+../src/defenderGame.xc:136:9: error: use of undeclared identifer `gameEnded'
+    if (gameEnded) break;
+        ^
+../src/defenderGame.xc:174:11: error: use of undeclared identifer `gameEnded'
+      if (gameEnded) running = 0;
+          ^
+xmake[1]: *** [.build/src/defenderGame.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:13:06 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:13:06 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:13:07 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:13:07 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+16:13:07 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+16:13:11 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+16:17:17 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:17:17 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:17:18 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:17:18 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+16:17:18 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+16:17:22 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+16:18:18 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:18:18 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:18:18 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:18:18 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+16:18:18 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+16:18:23 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+16:18:38 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+16:19:42 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+../src/defenderGame.xc:122:7: warning: unused variable `gameEnded' [-Wunused-variable]
+  int gameEnded = 0;                       //game has not ended
+      ^~~~~~~~~
+../src/defenderGame.xc:154:7: warning: unused variable `gameEnded' [-Wunused-variable]
+  int gameEnded = 0;                         //game has not ended
+      ^~~~~~~~~
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+../src/defenderGame.xc:122:7: warning: unused variable `gameEnded' [-Wunused-variable]
+  int gameEnded = 0;                       //game has not ended
+      ^~~~~~~~~
+../src/defenderGame.xc:154:7: warning: unused variable `gameEnded' [-Wunused-variable]
+  int gameEnded = 0;                         //game has not ended
+      ^~~~~~~~~
+Creating defenderGame.xe
+Build Complete
+16:22:16 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+../src/defenderGame.xc:122:7: warning: unused variable `gameEnded' [-Wunused-variable]
+  int gameEnded = 0;                       //game has not ended
+      ^~~~~~~~~
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+../src/defenderGame.xc:122:7: warning: unused variable `gameEnded' [-Wunused-variable]
+  int gameEnded = 0;                       //game has not ended
+      ^~~~~~~~~
+Creating defenderGame.xe
+Build Complete
+16:24:57 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:24:57 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:24:58 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:24:58 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+16:24:58 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+16:25:04 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+16:26:09 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:26:09 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:26:09 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:26:09 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+16:26:09 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+16:26:13 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+16:26:37 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+16:27:06 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+16:28:24 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+16:32:50 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:32:51 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:32:51 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:32:51 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+16:32:51 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+16:32:55 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+16:39:11 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:39:11 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:39:11 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:39:11 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+16:39:11 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+16:41:29 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:41:29 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:41:29 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:41:29 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+16:41:30 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+../src/defenderGame.xc:211:29: error: use of undeclared identifer `gameEndedUser'
+            fromAttacker :> gameEndedUser;
+                            ^
+../src/defenderGame.xc:212:29: error: incompatible types in output
+            fromUser     <: gameEndedUser;
+                            ^~~~~~~~~~~~~
+xmake[1]: *** [.build/src/defenderGame.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:41:58 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:41:58 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:41:58 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:41:58 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+16:41:59 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+16:42:12 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:42:12 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:42:12 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:42:12 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+16:42:17 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+Creating defenderGame.xe
+Build Complete
+16:43:25 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:43:26 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:43:26 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:43:26 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+16:43:26 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+../src/defenderGame.xc:122:7: warning: unused variable `gameEnded' [-Wunused-variable]
+  int gameEnded = 0;                       //game has not ended
+      ^~~~~~~~~
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+../src/defenderGame.xc:122:7: warning: unused variable `gameEnded' [-Wunused-variable]
+  int gameEnded = 0;                       //game has not ended
+      ^~~~~~~~~
+Creating defenderGame.xe
+Build Complete
+16:43:36 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+16:44:03 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+16:49:25 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:49:25 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:49:25 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:49:26 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+16:49:26 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+../src/defenderGame.xc:122:7: warning: unused variable `gameEnded' [-Wunused-variable]
+  int gameEnded = 0;                       //game has not ended
+      ^~~~~~~~~
+../src/defenderGame.xc:152:7: warning: unused variable `gameEnded' [-Wunused-variable]
+  int gameEnded = 0;                         //game has not ended
+      ^~~~~~~~~
+Propagating analysis
+Creating dependencies for defenderGame.xc
+Compiling defenderGame.xc
+../src/defenderGame.xc:122:7: warning: unused variable `gameEnded' [-Wunused-variable]
+  int gameEnded = 0;                       //game has not ended
+      ^~~~~~~~~
+../src/defenderGame.xc:152:7: warning: unused variable `gameEnded' [-Wunused-variable]
+  int gameEnded = 0;                         //game has not ended
+      ^~~~~~~~~
+Creating defenderGame.xe
+Build Complete
+16:49:30 **** Incremental Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//defenderGame.xe' is up to date.
+Build Complete
+16:50:08 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+16:50:08 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:50:08 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+16:50:08 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'

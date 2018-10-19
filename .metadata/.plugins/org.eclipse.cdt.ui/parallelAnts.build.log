@@ -1,9 +1,8 @@
-17:08:41 **** Incremental Build of configuration Default for project parallelAnts ****
-xmake CONFIG=Default all 
-Checking build modules
-No build modules used.
-xmake[1]: `bin//parallelAnts.xe' is up to date.
-Build Complete
+16:50:08 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
 
-17:08:42 Build Finished (took 359ms)
+16:50:08 Build Finished (took 76ms)
 

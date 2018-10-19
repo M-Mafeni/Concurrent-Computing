@@ -41,7 +41,7 @@ Ant antMove(const int grid[3][4], Ant a) {
 
 void receiveWorkerData(Ant q,chanend dataIncomingA,chanend dataIncomingB){
     int fertility1,fertility2;
-    for(int k=0;k<3;k++){
+    for(int k=0;k<100;k++){
         // get fertility values from ants
         dataIncomingA :> fertility1;
         dataIncomingB :> fertility2;
@@ -59,7 +59,7 @@ void receiveWorkerData(Ant q,chanend dataIncomingA,chanend dataIncomingB){
 }
 
 void ant(const int grid[3][4], Ant a,chanend workerChannel) {
-    for(int k = 0; k < 3;k++){
+    for(int k = 0; k < 100;k++){
         int command = 0;
             int fertility = grid[a.p.row][a.p.col];
             //send data to queen
@@ -70,7 +70,7 @@ void ant(const int grid[3][4], Ant a,chanend workerChannel) {
                 a = antMove(grid, a);
                 a = antMove(grid, a);
             }
-            printf("Ant info for ant %d: Position: (%d,%d), Fertility: %d\n", a.id, a.p.row, a.p.col, fertility);
+            //printf("Ant info for ant %d: Position: (%d,%d), Fertility: %d\n", a.id, a.p.row, a.p.col, fertility);
     }
 }
 
