@@ -30,6 +30,7 @@ on tile[0] : out port leds = XS1_PORT_4F;   //port to access xCore-200 LEDs
 
 //DISPLAYS an LED pattern
 int showLEDs(out port p, chanend fromVisualiser) {
+  int gameEnded = 0; // checks if the game has ended
   int pattern; //1st bit...separate green LED
                //2nd bit...blue LED
                //3rd bit...green LED
@@ -37,19 +38,28 @@ int showLEDs(out port p, chanend fromVisualiser) {
   while (1) {
     fromVisualiser :> pattern;   //receive new pattern from visualiser
     p <: pattern;                //send pattern to LED port
+   // fromVisualiser :> gameEnded;
+  //  if(gameEnded) break;
   }
+  printf("\nLED thread has ended\n");
   return 0;
 }
 
 //READ BUTTONS and send button pattern to userAnt
 void buttonListener(in port b, chanend toUserAnt) {
   int r;
+  int gameEnded = 0; // checks that game has ended
   while (1) {
     b when pinseq(15)  :> r;    // check that no button is pressed
     b when pinsneq(15) :> r;    // check if some buttons are pressed
     if ((r==13) || (r==14))     // if either button is pressed
     toUserAnt <: r;             // send button pattern to userAnt
+    //game Ended
+//    toUserAnt :> gameEnded;
+  //  if(gameEnded) break;
   }
+  printf("\nbutton thread has ended\n");
+
 }
 
 //WAIT function
@@ -83,6 +93,7 @@ void consolePrint(unsigned int userAntToDisplay,
 void visualiser(chanend fromUserAnt, chanend fromAttackerAnt, chanend toLEDs) {
   unsigned int userAntToDisplay = 11;
   unsigned int attackerAntToDisplay = 2;
+  int gameEnded = 0; // checks if the game has ended
   int pattern = 0;
   int round = 0;
   int distance = 0;
@@ -103,7 +114,13 @@ void visualiser(chanend fromUserAnt, chanend fromAttackerAnt, chanend toLEDs) {
     pattern = round%2 + 8 * dangerzone + 2 * ((distance==1) || (distance==-1));
     if ((attackerAntToDisplay>7)&&(attackerAntToDisplay<15)) pattern = 15;
     toLEDs <: pattern;
+    // game end
+  //  fromUserAnt :> gameEnded;
+   // toLEDs <: gameEnded;
+   // if(gameEnded) break;
   }
+  printf("\nVisualiser thread has ended\n");
+
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -114,44 +131,52 @@ void visualiser(chanend fromUserAnt, chanend fromAttackerAnt, chanend toLEDs) {
 
 //DEFENDER PROCESS... The defender is controlled by this process userAnt,
 //                    which has channels to a buttonListener, visualiser and controller
-void userAnt(chanend fromButtons, chanend toVisualiser, chanend toController) {
+void userAnt(chanend fromButtons, chanend toVisualiser, chanend toController,chanend fromController) {
   unsigned int userAntPosition = 11;       //the current defender position
   int buttonInput;                         //the input pattern from the buttonListener
   unsigned int attemptedAntPosition = 0;   //the next attempted defender position after considering button
   int moveForbidden;                       //the verdict of the controller if move is allowed
-  int gameEnded = 0;                       //game has not ended
+  int gameEnded = 0;                       //checks whether the game has ended
   toVisualiser <: userAntPosition;         //show initial position
+  printf("\n initial values set \n");
   while (1) {
+    printf("\n getting button input \n");
     fromButtons :> buttonInput; //expect values 13 and 14
+    printf("\n got button input \n");
     if (buttonInput == 13) attemptedAntPosition = (userAntPosition -1 + 23) % 23; // moving left
     else attemptedAntPosition = (userAntPosition + 1) % 23; // moving right
+    printf("\n sending attempt \n");
     toController <: attemptedAntPosition;
+    printf("\n attempt has been sent \n");
 
     toController :> moveForbidden;
     if (!moveForbidden) { // legal move
         userAntPosition = attemptedAntPosition;
     }
-
-    toVisualiser <: userAntPosition;
-
-
+   printf("\n printing position \n");
+   toVisualiser <: userAntPosition;
+   printf("\n printed position \n");
+    // game end
+  // fromController <: gameEnded;
+  // fromController :> gameEnded;
+   if(gameEnded == 1) break;
    }
-
+  printf("\n User thread has ended\n");
 
  }
 
 
 //ATTACKER PROCESS... The attacker is controlled by this process attackerAnt,
 //                    which has channels to the visualiser and controller
-void attackerAnt(chanend toVisualiser, chanend toController) {
+void attackerAnt(chanend toVisualiser, chanend toController,chanend fromController) {
   int moveCounter = 0;                       //moves of attacker so far
   unsigned int attackerAntPosition = 2;      //the current attacker position
   unsigned int attemptedAntPosition;         //the next attempted  position after considering move direction
   int currentDirection = 1;                  //the current direction the attacker is moving, 1 is right, 0 is left
   int moveForbidden = 0;                     //the verdict of the controller if move is allowed
-  int gameEnded = 0;                         //game has not ended
   int running = 1;                           //indicating the attacker process is alive
   toVisualiser <: attackerAntPosition;       //show initial position
+  int gameEnded = 0;                         //checks whether the game has ended
 
   while (running) {
       // change direction if moveCounter is divisible by 31 or 37
@@ -162,6 +187,7 @@ void attackerAnt(chanend toVisualiser, chanend toController) {
       toController <: attemptedAntPosition;
 
       toController :> moveForbidden;
+
       if (!moveForbidden) {
           attackerAntPosition = attemptedAntPosition;
           moveCounter++;
@@ -172,19 +198,29 @@ void attackerAnt(chanend toVisualiser, chanend toController) {
       toVisualiser <: attackerAntPosition;
       waitMoment();
 
+      //game end
+      fromController <: gameEnded;
+      fromController :> gameEnded;
+      if(gameEnded == 1) break;
+
 
   }
+  printf("\nattacker thread has ended\n");
+
 }
 
 //COLLISION DETECTOR... the controller process responds to �permission-to-move� requests
 //                      from attackerAnt and userAnt. The process also checks if an attackerAnt
 //                      has moved to winning positions.
-void controller(chanend fromAttacker, chanend fromUser) {
+void controller(chanend fromAttacker, chanend fromUser,chanend toAttacker,chanend toUser) {
   unsigned int lastReportedUserAntPosition = 11;      //position last reported by userAnt
   unsigned int lastReportedAttackerAntPosition = 5;   //position last reported by attackerAnt
   unsigned int attempt = 0;                           //incoming data from ants
+  int g;                                              //filler number
   int gameEnded = 0;                                  //indicates if game is over
+  printf("\n receiving first attempt \n");
   fromUser :> attempt;                                //start game when user moves
+  printf("\n attempt received \n");
   fromUser <: 1;                                      //forbid first move
 
   while (!gameEnded) {
@@ -196,12 +232,16 @@ void controller(chanend fromAttacker, chanend fromUser) {
         else {
             if (attempt >= 8 && attempt <= 14) {
                 gameEnded = 1;
+                printf("\ngame Ended\n");
             }
             lastReportedAttackerAntPosition = attempt;
             fromAttacker <: 0; //move isn't forbidden
         }
+        toAttacker :> g;
+        toAttacker <: gameEnded;
         break;
       case fromUser :> attempt:
+        printf("\n user attempt received \n");
         if (attempt == lastReportedAttackerAntPosition) { // defender move is forbidden
             fromUser <: 1;
         }
@@ -209,9 +249,15 @@ void controller(chanend fromAttacker, chanend fromUser) {
             lastReportedUserAntPosition = attempt;
             fromUser <: 0;
         }
+       // toUser :> g;
+       // toUser <: gameEnded;
         break;
     }
+    //game Ended signals
+    //send game Ended to both user and attacker
+
   }
+  printf("\nController thread has ended\n");
 }
 
 //MAIN PROCESS defining channels, orchestrating and starting the processes
@@ -221,13 +267,15 @@ int main(void) {
        attackerAntToVisualiser,  //channel from attackerAnt to Visualiser
        visualiserToLEDs,         //channel from Visualiser to showLEDs
        attackerAntToController,  //channel from attackerAnt to Controller
+       controllerToAttackerAnt,  //channel from Controller to attackerAnt
+       controllerToUserAnt,      //channel from Controller to userAnt
        userAntToController;      //channel from userAnt to Controller
 
   par {
     //PROCESSES FOR YOU TO EXPAND
-    on tile[1]: userAnt(buttonsToUserAnt,userAntToVisualiser,userAntToController);
-    on tile[1]: attackerAnt(attackerAntToVisualiser,attackerAntToController);
-    on tile[1]: controller(attackerAntToController, userAntToController);
+    on tile[1]: userAnt(buttonsToUserAnt,userAntToVisualiser,userAntToController,controllerToUserAnt);
+    on tile[1]: attackerAnt(attackerAntToVisualiser,attackerAntToController,controllerToAttackerAnt);
+    on tile[1]: controller(attackerAntToController, userAntToController,controllerToAttackerAnt,controllerToUserAnt);
 
     //HELPER PROCESSES USING BASIC I/O ON X-CORE200 EXPLORER
     on tile[0]: buttonListener(buttons, buttonsToUserAnt);
