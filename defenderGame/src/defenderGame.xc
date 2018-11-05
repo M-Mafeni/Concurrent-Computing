@@ -119,7 +119,6 @@ void userAnt(chanend fromButtons, chanend toVisualiser, chanend toController) {
   int buttonInput;                         //the input pattern from the buttonListener
   unsigned int attemptedAntPosition = 0;   //the next attempted defender position after considering button
   int moveForbidden;                       //the verdict of the controller if move is allowed
-  int gameEnded = 0;                       //game has not ended
   toVisualiser <: userAntPosition;         //show initial position
   while (1) {
     fromButtons :> buttonInput; //expect values 13 and 14
@@ -149,7 +148,6 @@ void attackerAnt(chanend toVisualiser, chanend toController) {
   unsigned int attemptedAntPosition;         //the next attempted  position after considering move direction
   int currentDirection = 1;                  //the current direction the attacker is moving, 1 is right, 0 is left
   int moveForbidden = 0;                     //the verdict of the controller if move is allowed
-  int gameEnded = 0;                         //game has not ended
   int running = 1;                           //indicating the attacker process is alive
   toVisualiser <: attackerAntPosition;       //show initial position
 
