@@ -136,7 +136,10 @@ void userAnt(chanend fromButtons, chanend toVisualiser, chanend toController,cha
   int buttonInput;                         //the input pattern from the buttonListener
   unsigned int attemptedAntPosition = 0;   //the next attempted defender position after considering button
   int moveForbidden;                       //the verdict of the controller if move is allowed
+<<<<<<< HEAD
   int gameEnded = 0;                       //checks whether the game has ended
+=======
+>>>>>>> d43c10a8250689ba0c722e05eced237a34f9b306
   toVisualiser <: userAntPosition;         //show initial position
   printf("\n initial values set \n");
   while (1) {
