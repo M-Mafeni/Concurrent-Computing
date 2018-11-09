@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include "pgmIO.h"
 #include "i2c.h"
+#include <assert.h>
 
 #define  IMHT 16                  //image height
 #define  IMWD 16                  //image width
@@ -25,6 +26,12 @@ port p_sda = XS1_PORT_1F;
 #define FXOS8700EQ_OUT_Y_LSB 0x4
 #define FXOS8700EQ_OUT_Z_MSB 0x5
 #define FXOS8700EQ_OUT_Z_LSB 0x6
+
+//
+struct Grid {
+    uchar grid[IMHT][IMWD];
+};
+typedef struct Grid Grid;
 
 /////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -67,10 +74,48 @@ void DataInStream(char infname[], chanend c_out)
 // Currently the function just inverts the image
 //
 /////////////////////////////////////////////////////////////////////////////////////////
+
+// Returns the number of living neighbours of the given cell
+int getNeighbours(Grid grid, uchar row, uchar col) {
+    int result = 0;
+
+    for (int i = row-1; i <= row+1; i++) {
+        int currentRow = (i + IMHT) % IMHT;
+        for (int j = col-1; j <= col+1 ; j++) {
+            int currentCol = (j + IMWD) % IMWD;
+
+            if (currentRow != row || currentCol != col) {
+                if (grid.grid[currentRow][currentCol] == 255) result++;
+            }
+        }
+    }
+    return result;
+}
+
+// Performs Game of Life rules
+Grid performRules(Grid grid) {
+    Grid newGrid;
+    for (int i = 0; i < IMHT; i++) {
+        for (int j = 0; j < IMWD; j++) {
+            newGrid.grid[i][j] = grid.grid[i][j]; // initialise all cells to original grid
+
+            int x = getNeighbours(grid, i, j); // gets the number of living neighbours of that cell
+
+            if(grid.grid[i][j] == 255) { // cell is alive
+                if (x != 2 && x != 3) newGrid.grid[i][j] = 0; // rules 1 and 3
+            }
+            else { // cell is dead
+                if (x == 3) newGrid.grid[i][j] = 255; // rule 4
+            }
+        }
+    }
+    return newGrid;
+}
+
 void distributor(chanend c_in, chanend c_out, chanend fromAcc)
 {
   uchar val;
-
+  Grid grid;
 
   //Starting up and wait for tilting of the xCore-200 Explorer
   printf( "ProcessImage: Start, size = %dx%d\n", IMHT, IMWD );
@@ -84,10 +129,58 @@ void distributor(chanend c_in, chanend c_out, chanend fromAcc)
   for( int y = 0; y < IMHT; y++ ) {   //go through all lines
     for( int x = 0; x < IMWD; x++ ) { //go through each pixel per line
       c_in :> val;                    //read the pixel value
-      c_out <: (uchar)( val ^ 0xC4 ); //send some modified pixel out
+      grid.grid[y][x] = val;          //initialise the grid array
     }
   }
-  printf( "\nOne processing round completed...\n" );
+  Grid gridResult = grid;
+
+  for (int z = 0; z < 10; z++) {
+      gridResult = performRules(gridResult);
+  }
+      for( int y = 0; y < IMHT; y++ ) {   //go through all lines
+
+          for( int x = 0; x < IMWD; x++ ) { //go through each pixel per line
+              //printf("%d ", grid.grid[y][x]);
+              //if(x == IMWD-1)  printf("\n");
+          c_out <: gridResult.grid[y][x];
+          }
+          //printf("\n");
+      }
+      printf( "\nOne processing round completed...\n" );
+}
+
+///////////////////
+// Tests
+///////////////////
+
+// First getNeighbours test
+void testGetNeighbours1() {
+    Grid testGrid;
+    testGrid.grid[0][0] = 0;
+    testGrid.grid[0][1] = 255;
+    testGrid.grid[0][2] = 255;
+
+    testGrid.grid[1][0] = 255;
+    testGrid.grid[1][1] = 0;
+    testGrid.grid[1][2] = 0;
+
+    testGrid.grid[2][0] = 255;
+    testGrid.grid[2][1] = 0;
+    testGrid.grid[2][2] = 255;
+
+    assert(getNeighbours(testGrid, 1, 1) == 5);
+    //printf("%d\n", getNeighbours(testGrid, 0, 0));
+    //assert(getNeighbours(testGrid, 0, 0) == 5);
+}
+
+// Tests getNeighbours gets the right amount of living neighbours
+void testGetNeighbours() {
+    testGetNeighbours1();
+}
+
+// Runs all tests
+void allTests() {
+    testGetNeighbours();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -172,6 +265,8 @@ void orientation( client interface i2c_master_if i2c, chanend toDist) {
 //
 /////////////////////////////////////////////////////////////////////////////////////////
 int main(void) {
+allTests(); // runs tests
+printf("all tests pass\n\n");
 
 i2c_master_if i2c[1];               //interface to orientation
 
