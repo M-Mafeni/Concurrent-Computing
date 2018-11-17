@@ -120,22 +120,23 @@ void performRules(uchar grid[IMHT][IMWD/4 + 2]) {
 }
 
 // worker thread that handles the part of the grid given
-void worker(chanend fromDistr) {
+void worker(chanend fromDistr,int workerNumber) {
     uchar partOfGrid[IMHT][IMWD/4 + 2];
     uchar val;
-    for (int i = 0; i < IMHT; i++) {
-            for (int j = 0; j < IMWD/4 + 2; j++) {
-                fromDistr :> val;
-                printf("val %d %d has been received \n",i,j);
-                partOfGrid[i][j] = val;
+    for (int x = 0; x < 7; x++) {
+        for (int i = 0; i < IMHT; i++) {
+                for (int j = 0; j < IMWD/4 + 2; j++) {
+                    fromDistr :> val;
+                    partOfGrid[i][j] = val;
+                }
+        }
+        performRules(partOfGrid);
+
+
+        for (int i = 0; i < IMHT; i++) {
+            for (int j = 1; j < IMWD/4 + 1; j++) {
+                fromDistr <: partOfGrid[i][j];
             }
-    }
-    performRules(partOfGrid);
-    printf("rules performed \n");
-    for (int i = 0; i < IMHT; i++) {
-        for (int j = 1; j < IMWD/4 + 1; j++) {
-            fromDistr <: partOfGrid[i][j];
-            printf("val %d %d has been sent \n",i,j);
         }
     }
 }
@@ -178,28 +179,34 @@ void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromA
     }
   }
   uchar partOfGrid[IMHT][IMWD/4 + 2];
-  for(int i = 0; i<4;i++){
-      for (int x = 0; x < IMHT; x++){
-          for (int y = (IMWD/4)*i; y < (IMWD/4)*(i+1); y++) {
-              if(y == (IMWD/4)*i) partOfGrid[x][y % (IMWD/4)] = grid.grid[x][(y-1 +IMWD)%IMWD]; // left most column of the section
-              else if(y == (IMWD/4)*(i+1) -1) partOfGrid[x][y % (IMWD/4)] = grid.grid[x][(y+1)%IMWD]; // right most column of the section
-              else partOfGrid[x][y % (IMWD/4)] = grid.grid[x][y];
-              toWorkers[i] <: partOfGrid[x][y % (IMWD/4)];
-              printf("worker %d has been sent the bit %d %d \n",i,x,y);
+  for (int a = 0; a < 7; a++) {
+      for(int i = 0; i<4;i++){
+          for (int x = 0; x < IMHT; x++){
+              for (int y = (IMWD/4)*i; y < (IMWD/4)*(i+1); y++) {
+                  if(y == (IMWD/4)*i) {
+                      partOfGrid[x][0] = grid.grid[x][(y-1 +IMWD)%IMWD]; // left most column of the section
+                      toWorkers[i] <: partOfGrid[x][0]; // send the extra cell on the left
+                  }
+                  else if(y == (IMWD/4)*(i+1) -1) {
+                      partOfGrid[x][IMWD/4 + 1] = grid.grid[x][(y+1)%IMWD]; // right most column of the section
+                      toWorkers[i] <: partOfGrid[x][IMWD/4 + 1]; // send the extra cell on the right
+                  }
+                  partOfGrid[x][y % (IMWD/4) + 1] = grid.grid[x][y];
+                  toWorkers[i] <: partOfGrid[x][y % (IMWD/4) + 1];
+              }
           }
+
       }
-  }
-  for (int i = 0; i<4; i++) {
-      ///assembly
-      for (int x = 0; x < IMHT; x++) {
-          for (int y = 0; y < IMWD/4; y++) {
-              toWorkers[i]:>grid.grid[x][i*(IMWD/4) + y];
-              printf("worker %d has received the bit %d %d \n",i,x,y);
+      for (int i = 0; i<4; i++) {
+          ///assembly
+          for (int x = 0; x < IMHT; x++) {
+              for (int y = 0; y < IMWD/4; y++) {
+                  toWorkers[i]:>grid.grid[x][i*(IMWD/4) + y];
+              }
           }
       }
   }
 //print the picture
-  printf("writing to picture \n");
   for( int y = 0; y < IMHT; y++ ) {   //go through all lines
       for( int x = 0; x < IMWD; x++ ) { //go through each pixel per line
          c_out <: grid.grid[y][x]; // output the resulting grid of this iteration
@@ -352,7 +359,7 @@ par {
     DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
     distributor(workers,c_inIO, c_outIO, c_control);//thread to coordinate work on image
     par(int i =0; i<4; i++){
-        worker(workers[i]);
+        worker(workers[i],i);
     }
   }
 
