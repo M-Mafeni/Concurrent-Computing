@@ -154,7 +154,7 @@ void splitGrid(chanend c, int i, Grid grid) {
 
 }
 
-void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromAcc)
+void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromAcc, chanend toTimer)
 {
   uchar val;
   Grid grid;
@@ -172,6 +172,9 @@ void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromA
   //This just inverts every pixel, but you should
   //change the image according to the "Game of Life"
   printf( "Processing...\n" );
+
+  //toTimer <: 1; // start the timer
+
   for( int y = 0; y < IMHT; y++ ) {   //go through all lines
     for( int x = 0; x < IMWD; x++ ) { //go through each pixel per line
       c_in :> val;                    //read the pixel value
@@ -212,18 +215,32 @@ void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromA
          c_out <: grid.grid[y][x]; // output the resulting grid of this iteration
       }
   }
+
+  //toTimer <: 0; // stop the timer
+
   printf( "\nOne processing round completed...\n" );
 }
 
 //timing thread
-void timing(chanend c){
-    int isTime; //1 = start
-    c :> isTime;
-    int initialTime;
-    if(isTime){
-        timer t;
-        t :> initialTime; //get initial time
-    }
+void timing(chanend toDistr){
+//    int isTime; //1 = start
+//    toDistr :> isTime;
+//    unsigned int initialTime;
+//    unsigned int finalTime;
+//    if(isTime) {
+//        timer t;
+//        t :> initialTime; //get initial time
+//
+//        toDistr :> isTime;
+//            t :> finalTime;
+//            unsigned int timeTaken = finalTime-initialTime;
+//
+//            if (!isTime && timeTaken > 0) {
+//                printf("Time taken: %d\n", timeTaken);
+//            }
+//    }
+
+
 }
 
 ///////////////////
@@ -351,16 +368,19 @@ char infname[] = "test.pgm";     //put your input image path here
 char outfname[] = "testout.pgm"; //put your output image path here
 chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
 chan workers[4];                 //worker threads
+chan c_timing;                   //channel for the distributor and timing threads to interact
 
 par {
     i2c_master(i2c, 1, p_scl, p_sda, 10);   //server thread providing orientation data
     orientation(i2c[0],c_control);        //client thread reading orientation data
     DataInStream(infname, c_inIO);          //thread to read in a PGM image
     DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
-    distributor(workers,c_inIO, c_outIO, c_control);//thread to coordinate work on image
+    distributor(workers, c_inIO, c_outIO, c_control, c_timing);//thread to coordinate work on image
     par(int i =0; i<4; i++){
         worker(workers[i],i);
     }
+    //on tile[1].core[0] : timing(c_timing);
+
   }
 
   return 0;

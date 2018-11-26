@@ -1,8 +1,8 @@
-16:20:20 **** Clean-only build of configuration Default for project sandbox ****
+13:18:00 **** Clean-only build of configuration Default for project sandbox ****
 xmake CONFIG=Default clean 
 Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
 rm -rf './bin/'
 rm -rf '.build'
 
-16:20:20 Build Finished (took 130ms)
+13:18:00 Build Finished (took 140ms)
 

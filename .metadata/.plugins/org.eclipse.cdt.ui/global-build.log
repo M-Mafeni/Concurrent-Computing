@@ -7506,3 +7506,777 @@ xmake CONFIG=Default clean
 Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
 rm -rf './bin/'
 rm -rf '.build'
+16:37:15 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Build Complete
+14:01:53 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+12:34:51 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+12:34:51 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+../src/main.xc:236:5: error: use of undeclared identifer `t'
+    t :> finalTime;
+    ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+12:36:04 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:          9 .  FAILED
+  Timers available:          10,   used:          9 .  OKAY
+  Chanends available:        32,   used:         16 .  OKAY
+  Memory available:       262144,   used:      60804 .  OKAY
+    (Stack: 9036, Code: 48780, Data: 2988)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+12:36:17 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:          9 .  FAILED
+  Timers available:          10,   used:          9 .  OKAY
+  Chanends available:        32,   used:         16 .  OKAY
+  Memory available:       262144,   used:      60804 .  OKAY
+    (Stack: 9036, Code: 48780, Data: 2988)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+12:36:51 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:          9 .  FAILED
+  Timers available:          10,   used:          9 .  OKAY
+  Chanends available:        32,   used:         16 .  OKAY
+  Memory available:       262144,   used:      60804 .  OKAY
+    (Stack: 9036, Code: 48780, Data: 2988)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+12:37:15 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+12:37:15 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:          9 .  FAILED
+  Timers available:          10,   used:          9 .  OKAY
+  Chanends available:        32,   used:         16 .  OKAY
+  Memory available:       262144,   used:      60804 .  OKAY
+    (Stack: 9036, Code: 48780, Data: 2988)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+12:38:07 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+12:38:07 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+../src/main.xc:378:54: warning: `c_timing' not used in two parallel statements [-Wunusual-code]
+    distributor(workers, c_inIO, c_outIO, c_control, c_timing);//thread to coordinate work on image
+                                                     ^~~~~~~~
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+../src/main.xc:378:54: warning: `c_timing' not used in two parallel statements [-Wunusual-code]
+    distributor(workers, c_inIO, c_outIO, c_control, c_timing);//thread to coordinate work on image
+                                                     ^~~~~~~~
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Build Complete
+12:39:09 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+12:39:10 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:          9 .  FAILED
+  Timers available:          10,   used:          9 .  OKAY
+  Chanends available:        32,   used:         16 .  OKAY
+  Memory available:       262144,   used:      59932 .  OKAY
+    (Stack: 8316, Code: 48644, Data: 2972)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+12:49:41 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+12:49:42 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+../src/main.xc:368:1: error: only local variables of type chan or interface are allowed in a multi-tile main
+char outfname[] = "testout.pgm"; //put your output image path here
+^~~~~~~~~~~~~~~
+../src/main.xc:361:16: error: multi-tile main must consist of single non-empty par statement
+int main(void) {
+               ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+12:51:08 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+12:51:08 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:          9 .  FAILED
+  Timers available:          10,   used:          9 .  OKAY
+  Chanends available:        32,   used:         16 .  OKAY
+  Memory available:       262144,   used:      59932 .  OKAY
+    (Stack: 8316, Code: 48644, Data: 2972)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+12:52:18 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+12:52:18 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+../src/main.xc:374:5: error: parse error before "on"
+    on tile[0]: par {
+    ^
+../src/main.xc:381:5: warning: control reaches end of non-void function [-Wreturn-type]
+    }
+    ^
+../src/main.xc:383:18: error: parse error before "par"
+    on tile[1] : par(int i =0; i<4; i++){
+                 ^
+../src/main.xc:383:32: warning: type defaults to `int' in declaration of `i' [-Wimplicit-int]
+    on tile[1] : par(int i =0; i<4; i++){
+                               ^
+../src/main.xc:383:32: warning: data definition has no type or storage class [-Wunusual-code]
+    on tile[1] : par(int i =0; i<4; i++){
+                               ^
+../src/main.xc:383:33: error: parse error before '<' token
+    on tile[1] : par(int i =0; i<4; i++){
+                                ^
+../src/main.xc:383:37: warning: type defaults to `int' in declaration of `i' [-Wimplicit-int]
+    on tile[1] : par(int i =0; i<4; i++){
+                                    ^
+../src/main.xc:383:37: warning: data definition has no type or storage class [-Wunusual-code]
+    on tile[1] : par(int i =0; i<4; i++){
+                                    ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+12:54:54 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+12:54:54 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:          9 .  FAILED
+  Timers available:          10,   used:          9 .  OKAY
+  Chanends available:        32,   used:         16 .  OKAY
+  Memory available:       262144,   used:      59932 .  OKAY
+    (Stack: 8316, Code: 48644, Data: 2972)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+12:55:31 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+12:55:31 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+../src/main.xc:368:1: error: only local variables of type chan or interface are allowed in a multi-tile main
+char outfname[] = "testout.pgm"; //put your output image path here
+^~~~~~~~~~~~~~~
+../src/main.xc:361:16: error: multi-tile main must consist of single non-empty par statement
+int main(void) {
+               ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+12:57:37 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+12:57:38 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+../src/main.xc:378:54: warning: `c_timing' not used in two parallel statements [-Wunusual-code]
+    distributor(workers, c_inIO, c_outIO, c_control, c_timing);//thread to coordinate work on image
+                                                     ^~~~~~~~
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+../src/main.xc:378:54: warning: `c_timing' not used in two parallel statements [-Wunusual-code]
+    distributor(workers, c_inIO, c_outIO, c_control, c_timing);//thread to coordinate work on image
+                                                     ^~~~~~~~
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Build Complete
+12:57:53 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+13:02:55 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+13:02:55 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+../src/main.xc:373:54: warning: `c_timing' not used in two parallel statements [-Wunusual-code]
+    distributor(workers, c_inIO, c_outIO, c_control, c_timing);//thread to coordinate work on image
+                                                     ^~~~~~~~
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+../src/main.xc:373:54: warning: `c_timing' not used in two parallel statements [-Wunusual-code]
+    distributor(workers, c_inIO, c_outIO, c_control, c_timing);//thread to coordinate work on image
+                                                     ^~~~~~~~
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Build Complete
+13:03:38 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+13:03:38 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+../src/main.xc:193:3: error: parse error before "on"
+  on tile[1] : timing(toTimer); // start the timer thread
+  ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+13:04:23 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+13:04:23 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+../src/main.xc:373:54: warning: `c_timing' not used in two parallel statements [-Wunusual-code]
+    distributor(workers, c_inIO, c_outIO, c_control, c_timing);//thread to coordinate work on image
+                                                     ^~~~~~~~
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+../src/main.xc:373:54: warning: `c_timing' not used in two parallel statements [-Wunusual-code]
+    distributor(workers, c_inIO, c_outIO, c_control, c_timing);//thread to coordinate work on image
+                                                     ^~~~~~~~
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Build Complete
+13:04:36 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+13:06:15 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+13:06:15 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+../src/main.xc:378:54: warning: `c_timing' not used in two parallel statements [-Wunusual-code]
+    distributor(workers, c_inIO, c_outIO, c_control, c_timing);//thread to coordinate work on image
+                                                     ^~~~~~~~
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+../src/main.xc:378:54: warning: `c_timing' not used in two parallel statements [-Wunusual-code]
+    distributor(workers, c_inIO, c_outIO, c_control, c_timing);//thread to coordinate work on image
+                                                     ^~~~~~~~
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Build Complete
+13:06:30 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+13:08:32 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+13:08:33 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+../src/main.xc:368:1: error: only local variables of type chan or interface are allowed in a multi-tile main
+char outfname[] = "testout.pgm"; //put your output image path here
+^~~~~~~~~~~~~~~
+../src/main.xc:361:16: error: multi-tile main must consist of single non-empty par statement
+int main(void) {
+               ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+13:17:59 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+13:17:59 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+13:17:59 **** Clean-only build of configuration Default for project lib_i2c ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+13:17:59 **** Clean-only build of configuration Default for project lib_logging ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+13:17:59 **** Clean-only build of configuration Default for project lib_xassert ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+13:18:00 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+13:18:00 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+13:18:00 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
