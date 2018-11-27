@@ -115,15 +115,13 @@ void performRules(uchar grid[IMHT][IMWD/4 + 2]) {
                 grid[i][j] = newGrid[i][j];
             }
     }
-
-  //  return newGrid;
 }
 
 // worker thread that handles the part of the grid given
 void worker(chanend fromDistr,int workerNumber) {
     uchar partOfGrid[IMHT][IMWD/4 + 2];
     uchar val;
-    for (int x = 0; x < 7; x++) {
+    for (int x = 0; x < 1; x++) {
         for (int i = 0; i < IMHT; i++) {
                 for (int j = 0; j < IMWD/4 + 2; j++) {
                     fromDistr :> val;
@@ -141,27 +139,13 @@ void worker(chanend fromDistr,int workerNumber) {
     }
 }
 
-void splitGrid(chanend c, int i, Grid grid) {
-    uchar partOfGrid[IMHT][IMWD/4 + 2];
-    for (int x = 0; x < IMHT; x++){
-        for (int y = (IMWD/4)*i; y < (IMWD/4)*(i+1); y++) {
-            if(y == (IMWD/4)*i) partOfGrid[x][y] = grid.grid[x][(y-1 +IMWD)%IMWD]; // left most column of the section
-            else if(y == (IMWD/4)*(i+1) -1) partOfGrid[x][y] = grid.grid[x][y+1%IMWD]; // right most column of the section
-            else partOfGrid[x][y] = grid.grid[x][y];
-        }
-    }
-//    worker(c, partOfGrid);
-
-}
-
-void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromAcc, chanend toTimer)
+void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromAcc)
 {
   uchar val;
   Grid grid;
- // timer t;
- // unsigned int time;
- // t :> time;
-
+  timer t;
+  unsigned int startTime;
+  unsigned int endTime;
 
   //Starting up and wait for tilting of the xCore-200 Explorer
   printf( "ProcessImage: Start, size = %dx%d\n", IMHT, IMWD );
@@ -173,7 +157,6 @@ void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromA
   //change the image according to the "Game of Life"
   printf( "Processing...\n" );
 
-  //toTimer <: 1; // start the timer
 
   for( int y = 0; y < IMHT; y++ ) {   //go through all lines
     for( int x = 0; x < IMWD; x++ ) { //go through each pixel per line
@@ -181,9 +164,13 @@ void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromA
       grid.grid[y][x] = val;          //initialise the grid array
     }
   }
+
+  t:>startTime;
+
   uchar partOfGrid[IMHT][IMWD/4 + 2];
-  for (int a = 0; a < 7; a++) {
+  for (int a = 0; a < 1; a++) {
       for(int i = 0; i<4;i++){
+          //if(i==0) t:>startTime;
           for (int x = 0; x < IMHT; x++){
               for (int y = (IMWD/4)*i; y < (IMWD/4)*(i+1); y++) {
                   if(y == (IMWD/4)*i) {
@@ -200,6 +187,7 @@ void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromA
           }
 
       }
+
       for (int i = 0; i<4; i++) {
           ///assembly
           for (int x = 0; x < IMHT; x++) {
@@ -209,6 +197,7 @@ void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromA
           }
       }
   }
+  t :> endTime;
 //print the picture
   for( int y = 0; y < IMHT; y++ ) {   //go through all lines
       for( int x = 0; x < IMWD; x++ ) { //go through each pixel per line
@@ -216,65 +205,18 @@ void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromA
       }
   }
 
-  //toTimer <: 0; // stop the timer
 
   printf( "\nOne processing round completed...\n" );
-}
-
-//timing thread
-void timing(chanend toDistr){
-//    int isTime; //1 = start
-//    toDistr :> isTime;
-//    unsigned int initialTime;
-//    unsigned int finalTime;
-//    if(isTime) {
-//        timer t;
-//        t :> initialTime; //get initial time
-//
-//        toDistr :> isTime;
-//            t :> finalTime;
-//            unsigned int timeTaken = finalTime-initialTime;
-//
-//            if (!isTime && timeTaken > 0) {
-//                printf("Time taken: %d\n", timeTaken);
-//            }
-//    }
-
-
+  float totalTime = (endTime-startTime)/102261126.0; //(2^32-1)/42 = 102261126
+  printf("\ntime = %.2f seconds \n",totalTime);
 }
 
 ///////////////////
 // Tests
 ///////////////////
 
-// First getNeighbours test
-void testGetNeighbours1() {
-//    Grid testGrid;
-//    testGrid.grid[0][0] = 0;
-//    testGrid.grid[0][1] = 255;
-//    testGrid.grid[0][2] = 255;
-//
-//    testGrid.grid[1][0] = 255;
-//    testGrid.grid[1][1] = 0;
-//    testGrid.grid[1][2] = 0;
-//
-//    testGrid.grid[2][0] = 255;
-//    testGrid.grid[2][1] = 0;
-//    testGrid.grid[2][2] = 255;
-//
-//    assert(getNeighbours(testGrid, 1, 1) == 5);
-//    //printf("%d\n", getNeighbours(testGrid, 0, 0));
-//    //assert(getNeighbours(testGrid, 0, 0) == 5);
-}
-
-// Tests getNeighbours gets the right amount of living neighbours
-void testGetNeighbours() {
-    testGetNeighbours1();
-}
-
 // Runs all tests
 void allTests() {
-    testGetNeighbours();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -368,19 +310,16 @@ char infname[] = "test.pgm";     //put your input image path here
 char outfname[] = "testout.pgm"; //put your output image path here
 chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
 chan workers[4];                 //worker threads
-chan c_timing;                   //channel for the distributor and timing threads to interact
 
 par {
     i2c_master(i2c, 1, p_scl, p_sda, 10);   //server thread providing orientation data
     orientation(i2c[0],c_control);        //client thread reading orientation data
     DataInStream(infname, c_inIO);          //thread to read in a PGM image
     DataOutStream(outfname, c_outIO);       //thread to write out a PGM image
-    distributor(workers, c_inIO, c_outIO, c_control, c_timing);//thread to coordinate work on image
+    distributor(workers, c_inIO, c_outIO, c_control);//thread to coordinate work on image
     par(int i =0; i<4; i++){
         worker(workers[i],i);
     }
-    //on tile[1].core[0] : timing(c_timing);
-
   }
 
   return 0;
