@@ -1,6 +1,6 @@
-13:17:59 **** Clean-only build of configuration Default for project lib_xassert ****
-xmake -f .makefile clean 
+15:16:57 **** Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
 ** Module only - only builds as part of application **
 
-13:18:00 Build Finished (took 98ms)
+15:16:57 Build Finished (took 146ms)
 

@@ -1,0 +1,93 @@
+<preCompilationAnalysis file="../src/queenAnt.xc">
+<fDef name="ant" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fDef name="antMove" global="true" noreturn="false" doNotSpecialize="false" numParams="2"/>
+<fDef name="main" global="true" noreturn="false" doNotSpecialize="false" numParams="0"/>
+<fDef name="receiveWorkerData" global="true" noreturn="false" doNotSpecialize="false" numParams="3"/>
+<fCall name="printf" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="antMove" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="antMove" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="receiveWorkerData" global="true" numArgs="3" impId="0">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="ant" global="true" numArgs="3" impId="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="ant" global="true" numArgs="3" impId="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+</preCompilationAnalysis>

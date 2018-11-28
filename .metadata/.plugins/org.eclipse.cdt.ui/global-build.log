@@ -8280,3 +8280,341 @@ xmake CONFIG=Default clean
 Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
 rm -rf './bin/'
 rm -rf '.build'
+14:48:08 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+14:50:53 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:310:1: error: only local variables of type chan or interface are allowed in a multi-tile main
+char outfname[] = "testout.pgm"; //put your output image path here
+^~~~~~~~~~~~~~~
+../src/main.xc:303:16: error: multi-tile main must consist of single non-empty par statement
+int main(void) {
+               ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:52:34 **** Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing sandbox.xc
+Propagating analysis
+Creating dependencies for sandbox.xc
+Compiling sandbox.xc
+Creating sandbox.xe
+Build Complete
+14:53:29 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:310:1: error: only local variables of type chan or interface are allowed in a multi-tile main
+char outfname[] = "testout.pgm"; //put your output image path here
+^~~~~~~~~~~~~~~
+../src/main.xc:303:16: error: multi-tile main must consist of single non-empty par statement
+int main(void) {
+               ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:54:27 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:310:1: error: only local variables of type chan or interface are allowed in a multi-tile main
+char outfname[] = "testout.pgm"; //put your output image path here
+^~~~~~~~~~~~~~~
+../src/main.xc:303:16: error: multi-tile main must consist of single non-empty par statement
+int main(void) {
+               ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:54:55 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:310:1: error: only local variables of type chan or interface are allowed in a multi-tile main
+char outfname[] = "testout.pgm"; //put your output image path here
+^~~~~~~~~~~~~~~
+../src/main.xc:303:16: error: multi-tile main must consist of single non-empty par statement
+int main(void) {
+               ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+14:55:20 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:14:56 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:303:16: error: multi-tile main must consist of single non-empty par statement
+int main(void) {
+               ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:15:20 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:315:5: error: components of multi-tile par must have `on' specifier or call a service
+    i2c_master(i2c, 1, p_scl, p_sda, 10);   //server thread providing orientation data
+    ^
+../src/main.xc:316:5: error: components of multi-tile par must have `on' specifier or call a service
+    orientation(i2c[0],c_control);        //client thread reading orientation data
+    ^
+../src/main.xc:317:5: error: components of multi-tile par must have `on' specifier or call a service
+    DataInStream("test.pgm", c_inIO);          //thread to read in a PGM image
+    ^
+../src/main.xc:318:5: error: components of multi-tile par must have `on' specifier or call a service
+    DataOutStream("testout.pgm", c_outIO);       //thread to write out a PGM image
+    ^
+../src/main.xc:319:5: error: components of multi-tile par must have `on' specifier or call a service
+    distributor(workers, c_inIO, c_outIO, c_control); //thread to coordinate work on image
+    ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:15:48 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+xmap: Error: Port p_scl is not placed on a specific tile.
+xmap: Error: Port p_sda is not placed on a specific tile.
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+15:16:42 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:303:16: error: multi-tile main must consist of single non-empty par statement
+int main(void) {
+               ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:16:52 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+xmap: Error: Port p_scl is not placed on a specific tile.
+xmap: Error: Port p_sda is not placed on a specific tile.
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+15:16:56 **** Build of configuration Default for project defenderGame ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing defenderGame.xc
+../src/defenderGame.xc:33:7: warning: unused variable `gameEnded' [-Wunused-variable]
+  int gameEnded = 0; // checks if the game has ended
+      ^~~~~~~~~
+../src/defenderGame.xc:51:7: warning: unused variable `gameEnded' [-Wunused-variable]
+  int gameEnded = 0; // checks that game has ended
+      ^~~~~~~~~
+../src/defenderGame.xc:96:7: warning: unused variable `gameEnded' [-Wunused-variable]
+  int gameEnded = 0; // checks if the game has ended
+      ^~~~~~~~~
+../src/defenderGame.xc:139:1: error: version control conflict marker in file
+<<<<<<< HEAD
+^
+xmake[1]: *** [.build/src/defenderGame.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:16:57 **** Build of configuration Default for project lib_i2c ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:16:57 **** Build of configuration Default for project lib_logging ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:16:57 **** Build of configuration Default for project lib_xassert ****
+xmake -f .makefile all 
+** Module only - only builds as part of application **
+15:16:58 **** Build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing parallelAnts.xc
+Propagating analysis
+Creating dependencies for parallelAnts.xc
+Compiling parallelAnts.xc
+Creating parallelAnts.xe
+Build Complete
+15:16:59 **** Build of configuration Default for project queenAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Analyzing queenAnt.xc
+Propagating analysis
+Creating dependencies for queenAnt.xc
+Compiling queenAnt.xc
+Creating parallelAnts.xe
+Build Complete
+15:17:01 **** Incremental Build of configuration Default for project sandbox ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+xmake[1]: `bin//sandbox.xe' is up to date.
+Build Complete
+15:17:07 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Creating game_of_life.xe
+xmap: Error: Port p_scl is not placed on a specific tile.
+xmap: Error: Port p_sda is not placed on a specific tile.
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+15:18:18 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+xmap: Error: Port p_sda is not placed on a specific tile.
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+15:18:31 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+15:30:06 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:168:14: error: input destination must be an lvalue
+  toTimer :> 1;
+             ^
+../src/main.xc:200:14: error: input destination must be an lvalue
+  toTimer :> 0;
+             ^
+../src/main.xc:213:37: error: use of undeclared identifer `totalTime'
+  printf("\ntime = %.5f seconds \n",totalTime);
+                                    ^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+15:30:44 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:342:67: warning: `c_timer' not used in two parallel statements [-Wunusual-code]
+    on tile[0] : distributor(workers, c_inIO, c_outIO, c_control, c_timer); //thread to coordinate work on image
+                                                                  ^~~~~~~
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+../src/main.xc:342:67: warning: `c_timer' not used in two parallel statements [-Wunusual-code]
+    on tile[0] : distributor(workers, c_inIO, c_outIO, c_control, c_timer); //thread to coordinate work on image
+                                                                  ^~~~~~~
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+15:31:26 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+16:19:47 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:20:13 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+16:20:34 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+16:31:10 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:332:1: error: only local variables of type chan or interface are allowed in a multi-tile main
+char outfname[] = "testout.pgm"; //put your output image path here
+^~~~~~~~~~~~~~~
+../src/main.xc:331:6: warning: unused variable `infname' [-Wunused-variable]
+char infname[] = "test.pgm";     //put your input image path here
+     ^~~~~~~~~
+../src/main.xc:332:6: warning: unused variable `outfname' [-Wunused-variable]
+char outfname[] = "testout.pgm"; //put your output image path here
+     ^~~~~~~~~~
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+16:31:26 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:33:13 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+16:33:38 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
