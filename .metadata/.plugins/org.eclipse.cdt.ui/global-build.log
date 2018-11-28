@@ -8618,3 +8618,851 @@ Checking build modules
 Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
 xmake[1]: `bin//game_of_life.xe' is up to date.
 Build Complete
+17:01:00 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+../src/main.xc:1:1: error: parse error before '/' token
+/ COMS20001 - Cellular Automaton Farm - Initial Code Skeleton
+^
+xmake[1]: *** [.build/src/main.xc.pca.xml.decouple] Error 1
+xmake: *** [analyze] Error 2
+17:01:16 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+17:01:56 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+17:05:16 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+17:05:56 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:          5 .  OKAY
+  Timers available:          10,   used:          5 .  OKAY
+  Chanends available:        32,   used:          8 .  OKAY
+  Memory available:       262144,   used:      1630180 .  FAILED
+    (Stack: 1578892, Code: 48132, Data: 3156)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+17:07:06 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+17:08:10 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Creating dependencies for main.xc
+Compiling main.xc
+Creating game_of_life.xe
+Build Complete
+17:09:14 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+17:10:44 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:12:27 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+17:15:16 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+17:16:29 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:17:58 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+17:17:59 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+17:17:59 **** Clean-only build of configuration Default for project lib_i2c ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+17:17:59 **** Clean-only build of configuration Default for project lib_logging ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+17:17:59 **** Clean-only build of configuration Default for project lib_xassert ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+17:17:59 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:17:59 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:17:59 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+17:18:00 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Build Complete
+17:18:15 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:19:14 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:19:46 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:19:56 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:20:33 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+17:20:34 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+17:20:34 **** Clean-only build of configuration Default for project lib_i2c ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+17:20:34 **** Clean-only build of configuration Default for project lib_logging ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+17:20:34 **** Clean-only build of configuration Default for project lib_xassert ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+17:20:34 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:20:34 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:20:34 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+17:20:40 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Build Complete
+17:20:58 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:21:22 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:22:17 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+17:23:01 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:23:25 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:23:41 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:23:59 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+17:25:27 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:          5 .  OKAY
+  Timers available:          10,   used:          5 .  OKAY
+  Chanends available:        32,   used:          8 .  OKAY
+  Memory available:       262144,   used:      449692 .  FAILED
+    (Stack: 398732, Code: 47856, Data: 3104)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+17:27:23 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+17:27:24 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+17:27:24 **** Clean-only build of configuration Default for project lib_i2c ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+17:27:24 **** Clean-only build of configuration Default for project lib_logging ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+17:27:24 **** Clean-only build of configuration Default for project lib_xassert ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+17:27:24 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:27:24 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:27:24 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+17:27:25 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Build Complete
+17:27:40 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:27:57 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:28:13 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:28:27 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:28:43 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:29:19 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+17:30:36 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:31:26 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:31:35 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:32:27 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:33:17 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:34:39 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+17:35:39 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:36:32 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:37:23 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:38:19 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:39:44 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+17:42:35 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:45:16 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:47:42 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:50:09 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+17:53:12 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:          5 .  OKAY
+  Timers available:          10,   used:          5 .  OKAY
+  Chanends available:        32,   used:         12 .  OKAY
+  Memory available:       262144,   used:      386052 .  FAILED
+    (Stack: 335484, Code: 47532, Data: 3036)
+Error: Constraints check FAILED for tile[0].
+Constraint check for tile[1]:
+  Cores available:            8,   used:          4 .  OKAY
+  Timers available:          10,   used:          4 .  OKAY
+  Chanends available:        32,   used:          4 .  OKAY
+  Memory available:       262144,   used:      538712 .  FAILED
+    (Stack: 534300, Code: 3832, Data: 580)
+Error: Constraints check FAILED for tile[1].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+17:54:25 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+17:54:26 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+17:54:26 **** Clean-only build of configuration Default for project lib_i2c ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+17:54:26 **** Clean-only build of configuration Default for project lib_logging ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+17:54:26 **** Clean-only build of configuration Default for project lib_xassert ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+17:54:26 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:54:26 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:54:27 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+17:54:31 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:          5 .  OKAY
+  Timers available:          10,   used:          5 .  OKAY
+  Chanends available:        32,   used:         12 .  OKAY
+  Memory available:       262144,   used:      386052 .  FAILED
+    (Stack: 335484, Code: 47532, Data: 3036)
+Error: Constraints check FAILED for tile[0].
+Constraint check for tile[1]:
+  Cores available:            8,   used:          4 .  OKAY
+  Timers available:          10,   used:          4 .  OKAY
+  Chanends available:        32,   used:          4 .  OKAY
+  Memory available:       262144,   used:      538712 .  FAILED
+    (Stack: 534300, Code: 3832, Data: 580)
+Error: Constraints check FAILED for tile[1].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+17:57:20 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
+17:57:20 **** Clean-only build of configuration Default for project defenderGame ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
+rm -rf './bin/'
+rm -rf '.build'
+17:57:20 **** Clean-only build of configuration Default for project lib_i2c ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+17:57:20 **** Clean-only build of configuration Default for project lib_logging ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+17:57:20 **** Clean-only build of configuration Default for project lib_xassert ****
+xmake -f .makefile clean 
+** Module only - only builds as part of application **
+17:57:21 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:57:21 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
+17:57:21 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
+17:57:21 **** Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing pgmIO.c
+Analyzing debug_printf.c
+Analyzing main.xc
+Analyzing i2c_master.xc
+Analyzing i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Analyzing i2c_master_ext.xc
+Analyzing i2c_master_single_port.xc
+Analyzing i2c_slave.xc
+Analyzing xassert.xc
+Propagating analysis
+Creating dependencies for xassert.xc
+Creating dependencies for i2c_slave.xc
+Creating dependencies for i2c_master_single_port.xc
+Creating dependencies for i2c_master_ext.xc
+Creating dependencies for i2c_master_async.xc
+Creating dependencies for i2c_master.xc
+Creating dependencies for main.xc
+Creating dependencies for debug_printf.c
+Creating dependencies for pgmIO.c
+Compiling pgmIO.c
+Compiling debug_printf.c
+Compiling main.xc
+Compiling i2c_master.xc
+Compiling i2c_master_async.xc
+/Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/lib_i2c/src/i2c_master_async.xc:126:26: warning: argument 1 of `i2c_master_async_aux' slices interface preventing analysis of its parallel usage [-Wunusual-code]
+    i2c_master_async_aux(i, n, i2c_dist[0], max_transaction_size);
+                         ^
+Compiling i2c_master_ext.xc
+Compiling i2c_master_single_port.xc
+Compiling i2c_slave.xc
+Compiling xassert.xc
+Creating game_of_life.xe
+Constraint check for tile[1]:
+  Cores available:            8,   used:          1 .  OKAY
+  Timers available:          10,   used:          1 .  OKAY
+  Chanends available:        32,   used:          4 .  OKAY
+  Memory available:       262144,   used:      416236 .  FAILED
+    (Stack: 393824, Code: 20932, Data: 1480)
+Error: Constraints check FAILED for tile[1].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+17:57:34 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Creating game_of_life.xe
+Constraint check for tile[1]:
+  Cores available:            8,   used:          1 .  OKAY
+  Timers available:          10,   used:          1 .  OKAY
+  Chanends available:        32,   used:          4 .  OKAY
+  Memory available:       262144,   used:      416236 .  FAILED
+    (Stack: 393824, Code: 20932, Data: 1480)
+Error: Constraints check FAILED for tile[1].
+xmake[1]: *** [bin//game_of_life.xe] Error 1
+xmake: *** [bin//game_of_life.xe] Error 2
+17:59:26 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+17:59:44 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+18:00:11 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+18:01:29 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete
+18:01:46 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+xmake[1]: `bin//game_of_life.xe' is up to date.
+Build Complete
+18:02:03 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
+Analyzing main.xc
+Propagating analysis
+Creating dependencies for main.xc
+Compiling main.xc
+Compiling i2c_master.xc
+Creating game_of_life.xe
+Build Complete

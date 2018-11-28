@@ -56,7 +56,7 @@ void DataInStream(char infname[], chanend c_out)
     _readinline( line, IMWD );
     for( int x = 0; x < IMWD; x++ ) {
       c_out <: line[ x ];
-      printf( "-%4.1d ", line[ x ] ); //show image values
+     printf( "-%4.1d ", line[ x ] ); //show image values
     }
     printf( "\n" );
   }
@@ -211,7 +211,7 @@ void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromA
   toTimer :> totalTime;
 
 //  float totalTime = (endTime-startTime)/102261126.0; //(2^32-1)/42 = 102261126
-  printf("\ntime = %.5f milliseconds \n",totalTime);
+  printf("\ntime = %.2f milliseconds \n",totalTime);
 }
 
 // Timing thread
@@ -289,7 +289,7 @@ void orientation( client interface i2c_master_if i2c, chanend toDist) {
   if (result != I2C_REGOP_SUCCESS) {
     printf("I2C write reg failed\n");
   }
-  
+
   // Enable FXOS8700EQ
   result = i2c.write_reg(FXOS8700EQ_I2C_ADDR, FXOS8700EQ_CTRL_REG_1, 0x01);
   if (result != I2C_REGOP_SUCCESS) {

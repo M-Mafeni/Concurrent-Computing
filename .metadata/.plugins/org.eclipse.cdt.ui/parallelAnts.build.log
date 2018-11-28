@@ -1,13 +1,8 @@
-15:16:58 **** Build of configuration Default for project parallelAnts ****
-xmake CONFIG=Default all 
-Checking build modules
-No build modules used.
-Analyzing parallelAnts.xc
-Propagating analysis
-Creating dependencies for parallelAnts.xc
-Compiling parallelAnts.xc
-Creating parallelAnts.xe
-Build Complete
+17:57:21 **** Clean-only build of configuration Default for project parallelAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
+rm -rf './bin/'
+rm -rf '.build'
 
-15:16:59 Build Finished (took 1s.677ms)
+17:57:21 Build Finished (took 137ms)
 

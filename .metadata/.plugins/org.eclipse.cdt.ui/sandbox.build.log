@@ -1,9 +1,8 @@
-15:17:01 **** Incremental Build of configuration Default for project sandbox ****
-xmake CONFIG=Default all 
-Checking build modules
-No build modules used.
-xmake[1]: `bin//sandbox.xe' is up to date.
-Build Complete
+17:57:21 **** Clean-only build of configuration Default for project sandbox ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/sandbox
+rm -rf './bin/'
+rm -rf '.build'
 
-15:17:02 Build Finished (took 422ms)
+17:57:21 Build Finished (took 138ms)
 

@@ -3189,3 +3189,83 @@ Binding(COMMAND+SHIFT+G,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
+
+!ENTRY org.eclipse.cdt.debug.core 4 104 2018-11-28 17:06:05.112
+!MESSAGE The program file specified in the launch configuration does not exist
+!STACK 0
+java.io.FileNotFoundException: /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life/bin/game_of_life.xe not found
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.verifyProgramPath(AbstractCLaunchDelegate.java:444)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.access$0(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate$LaunchDelegateRun.launch(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.launch(Unknown Source)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.core 4 104 2018-11-28 17:25:35.589
+!MESSAGE The program file specified in the launch configuration does not exist
+!STACK 0
+java.io.FileNotFoundException: /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life/bin/game_of_life.xe not found
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.verifyProgramPath(AbstractCLaunchDelegate.java:444)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.access$0(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate$LaunchDelegateRun.launch(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.launch(Unknown Source)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.core 4 104 2018-11-28 17:53:21.030
+!MESSAGE The program file specified in the launch configuration does not exist
+!STACK 0
+java.io.FileNotFoundException: /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life/bin/game_of_life.xe not found
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.verifyProgramPath(AbstractCLaunchDelegate.java:444)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.access$0(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate$LaunchDelegateRun.launch(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.launch(Unknown Source)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.core 4 104 2018-11-28 17:54:42.606
+!MESSAGE The program file specified in the launch configuration does not exist
+!STACK 0
+java.io.FileNotFoundException: /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life/bin/game_of_life.xe not found
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.verifyProgramPath(AbstractCLaunchDelegate.java:444)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.access$0(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate$LaunchDelegateRun.launch(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.launch(Unknown Source)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.debug.core 4 104 2018-11-28 17:57:38.943
+!MESSAGE The program file specified in the launch configuration does not exist
+!STACK 0
+java.io.FileNotFoundException: /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life/bin/game_of_life.xe not found
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(Unknown Source)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.verifyProgramPath(AbstractCLaunchDelegate.java:444)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.access$0(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate$LaunchDelegateRun.launch(Unknown Source)
+	at com.xmos.cdt.launch.core.XCoreRunLaunchDelegate.launch(Unknown Source)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)

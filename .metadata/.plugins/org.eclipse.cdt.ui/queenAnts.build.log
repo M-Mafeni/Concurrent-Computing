@@ -1,13 +1,8 @@
-15:16:59 **** Build of configuration Default for project queenAnts ****
-xmake CONFIG=Default all 
-Checking build modules
-No build modules used.
-Analyzing queenAnt.xc
-Propagating analysis
-Creating dependencies for queenAnt.xc
-Compiling queenAnt.xc
-Creating parallelAnts.xe
-Build Complete
+17:57:21 **** Clean-only build of configuration Default for project queenAnts ****
+xmake CONFIG=Default clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
+rm -rf './bin/'
+rm -rf '.build'
 
-15:17:01 Build Finished (took 1s.733ms)
+17:57:21 Build Finished (took 137ms)
 
