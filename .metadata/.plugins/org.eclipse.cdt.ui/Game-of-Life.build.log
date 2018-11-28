@@ -1,14 +1,8 @@
-18:02:03 **** Incremental Build of configuration Default for project Game-of-Life ****
-xmake all 
-Checking build modules
-Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
-Analyzing main.xc
-Propagating analysis
-Creating dependencies for main.xc
-Compiling main.xc
-Compiling i2c_master.xc
-Creating game_of_life.xe
-Build Complete
+18:03:32 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
 
-18:02:09 Build Finished (took 5s.742ms)
+18:03:33 Build Finished (took 448ms)
 
