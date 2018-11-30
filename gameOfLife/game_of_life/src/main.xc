@@ -7,6 +7,7 @@
 #include "pgmIO.h"
 #include "i2c.h"
 #include <assert.h>
+#include <stdbool.h>
 
 #define  IMHT 16                  //image height
 #define  IMWD 16                  //image width
@@ -17,6 +18,7 @@ typedef unsigned char uchar;      //using uchar as shorthand
 
 on tile[0]: port p_scl = XS1_PORT_1E;         //interface ports to orientation
 on tile[0]: port p_sda = XS1_PORT_1F;
+on tile[0] : in port buttons = XS1_PORT_4E; //port to access xCore-200 buttons
 
 #define FXOS8700EQ_I2C_ADDR 0x1E  //register addresses for orientation
 #define FXOS8700EQ_XYZ_DATA_CFG_REG 0x0E
@@ -123,7 +125,7 @@ void performRules(uchar grid[IMHT][IMWD/NoofThreads + 2]) {
 void worker(chanend fromDistr,int workerNumber) {
     uchar partOfGrid[IMHT][IMWD/NoofThreads + 2];
     uchar val;
-    for (int x = 0; x < IterationCount; x++) { //no of iterations of game of life - 100 iterations
+    while(1){ //no of iterations of game of life - 100 iterations
         for (int i = 0; i < IMHT; i++) {
                 for (int j = 0; j < IMWD/NoofThreads + 2; j++) {
                     fromDistr :> val;
@@ -141,15 +143,19 @@ void worker(chanend fromDistr,int workerNumber) {
     }
 }
 
-void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, chanend fromAcc, chanend toTimer)
+void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, chanend fromAcc, chanend toTimer, chanend fromButton)
 {
   uchar val;
   Grid grid;
+  int buttonPressed;
 
   //Starting up and wait for tilting of the xCore-200 Explorer
   printf( "ProcessImage: Start, size = %dx%d\n", IMHT, IMWD );
-  printf( "Waiting for Board Tilt...\n" );
-  fromAcc :> int value;
+  printf( "Press SW1 button...\n" );
+  //fromAcc :> int value;
+  fromButton :> buttonPressed; // receive button information
+
+
 
   //Read in and do something with your image values..
   //This just inverts every pixel, but you should
@@ -164,10 +170,36 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
     }
   }
 
+  int gameOfLifeCond = (buttonPressed == 14) ? 1 : 0; // SW1 is pressed
+  int tilted = 0;
+
   toTimer <: 1;
+  int iteration = 0;
 
   uchar partOfGrid[IMHT][IMWD/NoofThreads + 2];
-  for (int a = 0; a < IterationCount; a++) { //no of iterations in game of life - 100 iterations
+  while(gameOfLifeCond) { //no of iterations in game of life - 100 iterations
+      select {
+          case fromButton :> buttonPressed:
+              if (buttonPressed == 13) gameOfLifeCond = 0;
+              break;
+          case fromAcc :> int value:
+              printf("board has been tilted \n");
+              tilted = 1;
+              break;
+          default:
+              break;
+      }
+
+      if(tilted){
+          //print out info
+          printf("tilted info \n");
+          fromAcc :> int value;
+          tilted = 0;
+      }
+
+      printf("Performing iteration %d\n", iteration);
+      iteration++;
+
       for(int i = 0; i<NoofThreads;i++){
           for (int x = 0; x < IMHT; x++){
               for (int y = (IMWD/NoofThreads)*i; y < (IMWD/NoofThreads)*(i+1); y++) {
@@ -307,12 +339,32 @@ void orientation( client interface i2c_master_if i2c, chanend toDist) {
 
     //send signal to distributor after first tilt
     if (!tilted) {
-      if (x>30) {
+      if (x > 30) {
         tilted = 1 - tilted;
         toDist <: 1;
       }
     }
+    else {
+      if (x == 0) {
+          tilted = 1 - tilted;
+          toDist <: 1;
+      }
+
+    }
   }
+}
+
+//READ BUTTONS
+void buttonListener(in port b, chanend toDistr) {
+  int r;
+  while (1) {
+    b when pinseq(15)  :> r;    // check that no button is pressed
+    b when pinsneq(15) :> r;    // check if some buttons are pressed
+    if ((r==13) || (r==14))     // if either button is pressed - 13 is SW2, 14 is SW1
+    toDistr <: r;             // send button pattern to distributor
+  }
+  printf("\nbutton thread has ended\n");
+
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -328,14 +380,16 @@ i2c_master_if i2c[1];               //interface to orientation
 chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
 chan workers[NoofThreads];                 //worker threads
 chan c_timer;                      //channel for timer
+chan c_buttons;                    //channel for buttons
 
 par {
     on tile[0] : i2c_master(i2c, 1, p_scl, p_sda, 10);   //server thread providing orientation data
     on tile[0] : orientation(i2c[0],c_control);        //client thread reading orientation data
     on tile[0] : DataInStream("test.pgm", c_inIO);          //thread to read in a PGM image
     on tile[0] : DataOutStream("testout.pgm", c_outIO);       //thread to write out a PGM image
-    on tile[0] : distributor(workers, c_inIO, c_outIO, c_control, c_timer); //thread to coordinate work on image
+    on tile[0] : distributor(workers, c_inIO, c_outIO, c_control, c_timer, c_buttons); //thread to coordinate work on image
     on tile[0] : timing(c_timer);
+    on tile[0] : buttonListener(buttons, c_buttons);
     par(int i =0; i<NoofThreads; i++){
         on tile[1] : worker(workers[i],i);
     }
