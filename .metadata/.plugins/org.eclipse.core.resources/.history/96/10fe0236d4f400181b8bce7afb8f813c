@@ -197,6 +197,7 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
               if (buttonPressed == 13) gameOfLifeCond = 0;
               break;
           case fromAcc :> int value:
+              printf("board has been tilted \n");
               tilted = 1;
               break;
           default:
@@ -207,8 +208,8 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
           //print out info
           int liveCells = noOfLiveCells(grid.grid);
           float timeTaken = (stopRead-startRead)/100000.0;
-          printf("Game of Life Status Report: \n");
-          printf("Number of rounds processed: %d \nLive cells: %d\nTime taken to read in image: %.2f milliseconds.\n", iteration, liveCells, timeTaken);
+          printf("tilted info \n");
+          printf("Number of rounds processed: %d \n Live cells: %d\n Time taken to read in image: %.2f milliseconds.\n", iteration, liveCells, timeTaken);
           fromAcc :> int value;
           tilted = 0;
       }

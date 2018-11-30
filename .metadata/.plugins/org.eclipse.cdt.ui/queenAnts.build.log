@@ -1,8 +1,8 @@
-18:58:58 **** Clean-only build of configuration Default for project queenAnts ****
+19:02:31 **** Clean-only build of configuration Default for project queenAnts ****
 xmake CONFIG=Default clean 
 Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/queenAnts
 rm -rf './bin/'
 rm -rf '.build'
 
-18:58:58 Build Finished (took 130ms)
+19:02:32 Build Finished (took 122ms)
 

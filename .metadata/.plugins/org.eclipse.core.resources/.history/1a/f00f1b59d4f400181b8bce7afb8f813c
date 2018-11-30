@@ -197,6 +197,7 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
               if (buttonPressed == 13) gameOfLifeCond = 0;
               break;
           case fromAcc :> int value:
+              printf("Board has been tilted \n");
               tilted = 1;
               break;
           default:

@@ -158,9 +158,6 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
   uchar val;
   Grid grid;
   int buttonPressed;
-  timer readTimer;
-  unsigned int startRead;
-  unsigned int stopRead;
 
   //Starting up and wait for tilting of the xCore-200 Explorer
   printf( "ProcessImage: Start, size = %dx%d\n", IMHT, IMWD );
@@ -175,14 +172,13 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
   //change the image according to the "Game of Life"
   printf( "Processing...\n" );
 
-  readTimer :> startRead;
+
   for( int y = 0; y < IMHT; y++ ) {   //go through all lines
     for( int x = 0; x < IMWD; x++ ) { //go through each pixel per line
       c_in :> val;                    //read the pixel value
       grid.grid[y][x] = val;          //initialise the grid array
     }
   }
-  readTimer :> stopRead;
 
   int gameOfLifeCond = (buttonPressed == 14) ? 1 : 0; // SW1 is pressed
   int tilted = 0;
@@ -197,6 +193,7 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
               if (buttonPressed == 13) gameOfLifeCond = 0;
               break;
           case fromAcc :> int value:
+              printf("board has been tilted \n");
               tilted = 1;
               break;
           default:
@@ -205,10 +202,7 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
 
       if(tilted){
           //print out info
-          int liveCells = noOfLiveCells(grid.grid);
-          float timeTaken = (stopRead-startRead)/100000.0;
-          printf("Game of Life Status Report: \n");
-          printf("Number of rounds processed: %d \nLive cells: %d\nTime taken to read in image: %.2f milliseconds.\n", iteration, liveCells, timeTaken);
+          printf("tilted info \n");
           fromAcc :> int value;
           tilted = 0;
       }
