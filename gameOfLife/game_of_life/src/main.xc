@@ -121,7 +121,7 @@ void performRules(uchar grid[IMHT][IMWD/4 + 2]) {
 void worker(chanend fromDistr,int workerNumber) {
     uchar partOfGrid[IMHT][IMWD/4 + 2];
     uchar val;
-    for (int x = 0; x < 1; x++) {
+    for (int x = 0; x < 7; x++) { //no of iterations of game of life
         for (int i = 0; i < IMHT; i++) {
                 for (int j = 0; j < IMWD/4 + 2; j++) {
                     fromDistr :> val;
@@ -168,7 +168,7 @@ void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromA
   toTimer <: 1;
 
   uchar partOfGrid[IMHT][IMWD/4 + 2];
-  for (int a = 0; a < 1; a++) {
+  for (int a = 0; a < 7; a++) { //no of iterations in game of life
       for(int i = 0; i<4;i++){
           //if(i==0) t:>startTime;
           for (int x = 0; x < IMHT; x++){
