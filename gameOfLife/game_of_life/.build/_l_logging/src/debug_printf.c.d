@@ -1,4 +1,3 @@
 .build/_l_logging/src/debug_printf.c.d .build/_l_logging/src/debug_printf.c.o .build/_l_logging/src/debug_printf.c.pca.xml: \
-  C:/Users/micha/Documents/Concurrent-Computing/gameOfLife/lib_logging/src/debug_printf.c \
-  C:/Users/micha/Documents/Concurrent-Computing/gameOfLife/lib_logging/api\debug_print.h
-
+  ../../gameOfLife/lib_logging/src/debug_printf.c \
+  ../../gameOfLife/lib_logging/api/debug_print.h
