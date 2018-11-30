@@ -10,6 +10,7 @@
 
 #define  IMHT 16                  //image height
 #define  IMWD 16                  //image width
+#define  NoofThreads 4            // no of worker threads that we'll have
 
 typedef unsigned char uchar;      //using uchar as shorthand
 
@@ -76,13 +77,13 @@ void DataInStream(char infname[], chanend c_out)
 /////////////////////////////////////////////////////////////////////////////////////////
 
 // Returns the number of living neighbours of the given cell
-int getNeighbours(uchar grid[IMHT][IMWD/4 + 2], uchar row, uchar col) {
+int getNeighbours(uchar grid[IMHT][IMWD/NoofThreads + 2], uchar row, uchar col) {
     int result = 0;
 
     for (int i = row-1; i <= row+1; i++) {
         int currentRow = (i + IMHT) % IMHT;
         for (int j = col-1; j <= col+1 ; j++) {
-            int currentCol = (j + (IMWD/4 +2)) % (IMWD/4 +2);
+            int currentCol = (j + (IMWD/NoofThreads +2)) % (IMWD/NoofThreads +2); //grid wraps around
 
             if (currentRow != row || currentCol != col) {
                 if (grid[currentRow][currentCol] == 255) result++;
@@ -93,10 +94,10 @@ int getNeighbours(uchar grid[IMHT][IMWD/4 + 2], uchar row, uchar col) {
 }
 
 // Performs Game of Life rules
-void performRules(uchar grid[IMHT][IMWD/4 + 2]) {
-    uchar newGrid[IMHT][IMWD/4 + 2];
+void performRules(uchar grid[IMHT][IMWD/NoofThreads + 2]) {
+    uchar newGrid[IMHT][IMWD/NoofThreads + 2];
     for (int i = 0; i < IMHT; i++) {
-        for (int j = 1; j < IMWD/4+1; j++) { // excluding the first and last columns because they are extras
+        for (int j = 1; j < IMWD/NoofThreads +1; j++) { // excluding the first and last columns because they are extras
             newGrid[i][j] = grid[i][j]; // initialise all cells to original grid
 
             int x = getNeighbours(grid, i, j); // gets the number of living neighbours of that cell
@@ -111,7 +112,7 @@ void performRules(uchar grid[IMHT][IMWD/4 + 2]) {
     }
     // repopulate grid
     for (int i = 0; i < IMHT; i++) {
-            for (int j = 1; j < IMWD/4 + 1; j++) {
+            for (int j = 1; j < IMWD/NoofThreads + 1; j++) {
                 grid[i][j] = newGrid[i][j];
             }
     }
@@ -119,11 +120,11 @@ void performRules(uchar grid[IMHT][IMWD/4 + 2]) {
 
 // worker thread that handles the part of the grid given
 void worker(chanend fromDistr,int workerNumber) {
-    uchar partOfGrid[IMHT][IMWD/4 + 2];
+    uchar partOfGrid[IMHT][IMWD/NoofThreads + 2];
     uchar val;
     for (int x = 0; x < 10; x++) { //no of iterations of game of life
         for (int i = 0; i < IMHT; i++) {
-                for (int j = 0; j < IMWD/4 + 2; j++) {
+                for (int j = 0; j < IMWD/NoofThreads + 2; j++) {
                     fromDistr :> val;
                     partOfGrid[i][j] = val;
                 }
@@ -132,14 +133,14 @@ void worker(chanend fromDistr,int workerNumber) {
 
 
         for (int i = 0; i < IMHT; i++) {
-            for (int j = 1; j < IMWD/4 + 1; j++) {
+            for (int j = 1; j < IMWD/NoofThreads + 1; j++) {
                 fromDistr <: partOfGrid[i][j];
             }
         }
     }
 }
 
-void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromAcc, chanend toTimer)
+void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, chanend fromAcc, chanend toTimer)
 {
   uchar val;
   Grid grid;
@@ -167,40 +168,40 @@ void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromA
 
   toTimer <: 1;
 
-  uchar partOfGrid[IMHT][IMWD/4 + 2];
+  uchar partOfGrid[IMHT][IMWD/NoofThreads + 2];
   for (int a = 0; a < 10; a++) { //no of iterations in game of life
-      for(int i = 0; i<4;i++){
+      for(int i = 0; i<NoofThreads;i++){
           //if(i==0) t:>startTime;
           for (int x = 0; x < IMHT; x++){
-              for (int y = (IMWD/4)*i; y < (IMWD/4)*(i+1); y++) {
+              for (int y = (IMWD/NoofThreads)*i; y < (IMWD/NoofThreads)*(i+1); y++) {
                   // put the cell into partOfGrid, with width IMWD/4, and offsetted by 1 for the extra col on the left
-                  partOfGrid[x][y % (IMWD/4) + 1] = grid.grid[x][y];
+                  partOfGrid[x][y % (IMWD/NoofThreads) + 1] = grid.grid[x][y];
 
-                  if(y == (IMWD/4)*i) { // left most column of the section
+                  if(y == (IMWD/NoofThreads)*i) { // left most column of the section
                       partOfGrid[x][0] = grid.grid[x][(y-1 +IMWD)%IMWD]; // store it in left most column of partOfGrid
                       toWorkers[i] <: partOfGrid[x][0]; // send the extra cell on the left
 
-                      toWorkers[i] <: partOfGrid[x][y % (IMWD/4) + 1]; // send the current cell
+                      toWorkers[i] <: partOfGrid[x][y % (IMWD/NoofThreads) + 1]; // send the current cell
                   }
-                  else if(y == (IMWD/4)*(i+1) -1) { // right most column of the section
-                      toWorkers[i] <: partOfGrid[x][y % (IMWD/4) + 1]; // send the current cell
+                  else if(y == (IMWD/NoofThreads)*(i+1) -1) { // right most column of the section
+                      toWorkers[i] <: partOfGrid[x][y % (IMWD/NoofThreads) + 1]; // send the current cell
 
-                      partOfGrid[x][IMWD/4 + 1] = grid.grid[x][(y+1)%IMWD]; // store it in the right most column of partOfGrid
-                      toWorkers[i] <: partOfGrid[x][IMWD/4 + 1]; // send the extra cell on the right
+                      partOfGrid[x][IMWD/NoofThreads + 1] = grid.grid[x][(y+1)%IMWD]; // store it in the right most column of partOfGrid
+                      toWorkers[i] <: partOfGrid[x][IMWD/NoofThreads + 1]; // send the extra cell on the right
                   }
                   else { // not on either end of partOfGrid
-                      toWorkers[i] <: partOfGrid[x][y % (IMWD/4) + 1]; // only send the current cell
+                      toWorkers[i] <: partOfGrid[x][y % (IMWD/NoofThreads) + 1]; // only send the current cell
                   }
               }
           }
 
       }
 
-      for (int i = 0; i<4; i++) {
+      for (int i = 0; i<NoofThreads; i++) {
           ///assembly
           for (int x = 0; x < IMHT; x++) {
-              for (int y = 0; y < IMWD/4; y++) {
-                  toWorkers[i]:>grid.grid[x][i*(IMWD/4) + y];
+              for (int y = 0; y < IMWD/NoofThreads; y++) {
+                  toWorkers[i]:>grid.grid[x][i*(IMWD/NoofThreads) + y];
               }
           }
       }
@@ -339,7 +340,7 @@ i2c_master_if i2c[1];               //interface to orientation
 //char infname[] = "test.pgm";     //put your input image path here
 //char outfname[] = "testout.pgm"; //put your output image path here
 chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
-chan workers[4];                 //worker threads
+chan workers[NoofThreads];                 //worker threads
 chan c_timer;                      //channel for timer
 
 par {
@@ -349,7 +350,7 @@ par {
     on tile[0] : DataOutStream("testout.pgm", c_outIO);       //thread to write out a PGM image
     on tile[0] : distributor(workers, c_inIO, c_outIO, c_control, c_timer); //thread to coordinate work on image
     on tile[0] : timing(c_timer);
-    par(int i =0; i<4; i++){
+    par(int i =0; i<NoofThreads; i++){
         on tile[1] : worker(workers[i],i);
     }
   }
