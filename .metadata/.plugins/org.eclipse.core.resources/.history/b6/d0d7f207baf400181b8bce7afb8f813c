@@ -10,8 +10,7 @@
 
 #define  IMHT 16                  //image height
 #define  IMWD 16                  //image width
-#define  NoofThreads 8            // no of worker threads that we'll have
-#define  IterationCount 100       // number of iterations of game of life
+#define  NoofThreads 4            // no of worker threads that we'll have
 
 typedef unsigned char uchar;      //using uchar as shorthand
 
@@ -123,7 +122,7 @@ void performRules(uchar grid[IMHT][IMWD/NoofThreads + 2]) {
 void worker(chanend fromDistr,int workerNumber) {
     uchar partOfGrid[IMHT][IMWD/NoofThreads + 2];
     uchar val;
-    for (int x = 0; x < IterationCount; x++) { //no of iterations of game of life - 100 iterations
+    for (int x = 0; x < 10; x++) { //no of iterations of game of life
         for (int i = 0; i < IMHT; i++) {
                 for (int j = 0; j < IMWD/NoofThreads + 2; j++) {
                     fromDistr :> val;
@@ -145,6 +144,9 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
 {
   uchar val;
   Grid grid;
+//  timer t;
+//  unsigned int startTime;
+//  unsigned int endTime;
 
   //Starting up and wait for tilting of the xCore-200 Explorer
   printf( "ProcessImage: Start, size = %dx%d\n", IMHT, IMWD );
@@ -167,8 +169,9 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
   toTimer <: 1;
 
   uchar partOfGrid[IMHT][IMWD/NoofThreads + 2];
-  for (int a = 0; a < IterationCount; a++) { //no of iterations in game of life - 100 iterations
+  for (int a = 0; a < 10; a++) { //no of iterations in game of life
       for(int i = 0; i<NoofThreads;i++){
+          //if(i==0) t:>startTime;
           for (int x = 0; x < IMHT; x++){
               for (int y = (IMWD/NoofThreads)*i; y < (IMWD/NoofThreads)*(i+1); y++) {
                   // put the cell into partOfGrid, with width IMWD/4, and offsetted by 1 for the extra col on the left
@@ -216,6 +219,7 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
   float totalTime;
   toTimer :> totalTime;
 
+//  float totalTime = (endTime-startTime)/102261126.0; //(2^32-1)/42 = 102261126
   printf("\ntime = %.2f milliseconds \n",totalTime);
 }
 
@@ -238,6 +242,13 @@ void timing(chanend toDistr) {
     toDistr <: totalTime;
 }
 
+///////////////////
+// Tests
+///////////////////
+
+// Runs all tests
+void allTests() {
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -321,10 +332,13 @@ void orientation( client interface i2c_master_if i2c, chanend toDist) {
 //
 /////////////////////////////////////////////////////////////////////////////////////////
 int main(void) {
+//allTests(); // runs tests
+//printf("all tests pass\n\n");
 
 i2c_master_if i2c[1];               //interface to orientation
 
-
+//char infname[] = "test.pgm";     //put your input image path here
+//char outfname[] = "testout.pgm"; //put your output image path here
 chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
 chan workers[NoofThreads];                 //worker threads
 chan c_timer;                      //channel for timer
