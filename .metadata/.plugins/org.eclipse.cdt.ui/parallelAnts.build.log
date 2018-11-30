@@ -1,8 +1,8 @@
-14:31:21 **** Clean-only build of configuration Default for project parallelAnts ****
+15:28:21 **** Clean-only build of configuration Default for project parallelAnts ****
 xmake CONFIG=Default clean 
 Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/parallelAnts
 rm -rf './bin/'
 rm -rf '.build'
 
-14:31:21 Build Finished (took 145ms)
+15:28:21 Build Finished (took 150ms)
 

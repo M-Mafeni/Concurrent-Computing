@@ -126,7 +126,9 @@ void worker(chanend fromDistr,int workerNumber) {
                 for (int j = 0; j < IMWD/4 + 2; j++) {
                     fromDistr :> val;
                     partOfGrid[i][j] = val;
+                    if (workerNumber == 1) printf("%d       ", partOfGrid[i][j]);
                 }
+                if (workerNumber == 1) printf("\n");
         }
         performRules(partOfGrid);
 

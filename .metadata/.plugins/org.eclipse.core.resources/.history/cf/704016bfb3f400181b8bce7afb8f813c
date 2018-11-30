@@ -121,12 +121,14 @@ void performRules(uchar grid[IMHT][IMWD/4 + 2]) {
 void worker(chanend fromDistr,int workerNumber) {
     uchar partOfGrid[IMHT][IMWD/4 + 2];
     uchar val;
-    for (int x = 0; x < 10; x++) { //no of iterations of game of life
+    for (int x = 0; x < 1; x++) { //no of iterations of game of life
         for (int i = 0; i < IMHT; i++) {
                 for (int j = 0; j < IMWD/4 + 2; j++) {
                     fromDistr :> val;
                     partOfGrid[i][j] = val;
+                    if (workerNumber == 1) printf("%d       ", partOfGrid[i][j]);
                 }
+                if (workerNumber == 1) printf("\n");
         }
         performRules(partOfGrid);
 
@@ -168,28 +170,26 @@ void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromA
   toTimer <: 1;
 
   uchar partOfGrid[IMHT][IMWD/4 + 2];
-  for (int a = 0; a < 10; a++) { //no of iterations in game of life
+  for (int a = 0; a < 1; a++) { //no of iterations in game of life
       for(int i = 0; i<4;i++){
           //if(i==0) t:>startTime;
           for (int x = 0; x < IMHT; x++){
               for (int y = (IMWD/4)*i; y < (IMWD/4)*(i+1); y++) {
-                  // put the cell into partOfGrid, with width IMWD/4, and offsetted by 1 for the extra col on the left
-                  partOfGrid[x][y % (IMWD/4) + 1] = grid.grid[x][y];
-
-                  if(y == (IMWD/4)*i) { // left most column of the section
-                      partOfGrid[x][0] = grid.grid[x][(y-1 +IMWD)%IMWD]; // store it in left most column of partOfGrid
+                  if(y == (IMWD/4)*i) {
+                      partOfGrid[x][0] = grid.grid[x][(y-1 +IMWD)%IMWD]; // left most column of the section
                       toWorkers[i] <: partOfGrid[x][0]; // send the extra cell on the left
-
-                      toWorkers[i] <: partOfGrid[x][y % (IMWD/4) + 1]; // send the current cell
+                      partOfGrid[x][y % (IMWD/4) + 1] = grid.grid[x][y]; // put the cell into partOfGrid, with width IMWD/4, and offsetted by 1 for the extra col on the left
+                      toWorkers[i] <: partOfGrid[x][y % (IMWD/4) + 1];
                   }
-                  else if(y == (IMWD/4)*(i+1) -1) { // right most column of the section
-                      toWorkers[i] <: partOfGrid[x][y % (IMWD/4) + 1]; // send the current cell
-
-                      partOfGrid[x][IMWD/4 + 1] = grid.grid[x][(y+1)%IMWD]; // store it in the right most column of partOfGrid
+                  else if(y == (IMWD/4)*(i+1) -1) {
+                      partOfGrid[x][y % (IMWD/4) + 1] = grid.grid[x][y]; // put the cell into partOfGrid, with width IMWD/4, and offsetted by 1 for the extra col on the left
+                      toWorkers[i] <: partOfGrid[x][y % (IMWD/4) + 1];
+                      partOfGrid[x][IMWD/4 + 1] = grid.grid[x][(y+1)%IMWD]; // right most column of the section
                       toWorkers[i] <: partOfGrid[x][IMWD/4 + 1]; // send the extra cell on the right
                   }
-                  else { // not on either end of partOfGrid
-                      toWorkers[i] <: partOfGrid[x][y % (IMWD/4) + 1]; // only send the current cell
+                  else {
+                      partOfGrid[x][y % (IMWD/4) + 1] = grid.grid[x][y]; // put the cell into partOfGrid, with width IMWD/4, and offsetted by 1 for the extra col on the left
+                      toWorkers[i] <: partOfGrid[x][y % (IMWD/4) + 1];
                   }
               }
           }
@@ -345,7 +345,7 @@ chan c_timer;                      //channel for timer
 par {
     on tile[0] : i2c_master(i2c, 1, p_scl, p_sda, 10);   //server thread providing orientation data
     on tile[0] : orientation(i2c[0],c_control);        //client thread reading orientation data
-    on tile[0] : DataInStream("test.pgm", c_inIO);          //thread to read in a PGM image
+    on tile[0] : DataInStream("7th.pgm", c_inIO);          //thread to read in a PGM image
     on tile[0] : DataOutStream("testout.pgm", c_outIO);       //thread to write out a PGM image
     on tile[0] : distributor(workers, c_inIO, c_outIO, c_control, c_timer); //thread to coordinate work on image
     on tile[0] : timing(c_timer);

@@ -1,9 +1,8 @@
-14:33:56 **** Incremental Build of configuration Default for project Game-of-Life ****
-xmake all 
-Checking build modules
-Using build modules: lib_i2c(3.0.0) lib_logging(2.0.0) lib_xassert(2.0.0)
-xmake[1]: `bin//game_of_life.xe' is up to date.
-Build Complete
+15:28:20 **** Clean-only build of configuration Default for project Game-of-Life ****
+xmake clean 
+Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
+rm -rf './bin/'
+rm -rf '.build'
 
-14:33:58 Build Finished (took 1s.303ms)
+15:28:20 Build Finished (took 407ms)
 

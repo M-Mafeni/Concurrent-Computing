@@ -121,12 +121,14 @@ void performRules(uchar grid[IMHT][IMWD/4 + 2]) {
 void worker(chanend fromDistr,int workerNumber) {
     uchar partOfGrid[IMHT][IMWD/4 + 2];
     uchar val;
-    for (int x = 0; x < 10; x++) { //no of iterations of game of life
+    for (int x = 0; x < 1; x++) { //no of iterations of game of life
         for (int i = 0; i < IMHT; i++) {
                 for (int j = 0; j < IMWD/4 + 2; j++) {
                     fromDistr :> val;
                     partOfGrid[i][j] = val;
+                    if (workerNumber == 1) printf("%d       ", partOfGrid[i][j]);
                 }
+                if (workerNumber == 1) printf("\n");
         }
         performRules(partOfGrid);
 
@@ -168,7 +170,7 @@ void distributor(chanend toWorkers[4],chanend c_in, chanend c_out, chanend fromA
   toTimer <: 1;
 
   uchar partOfGrid[IMHT][IMWD/4 + 2];
-  for (int a = 0; a < 10; a++) { //no of iterations in game of life
+  for (int a = 0; a < 1; a++) { //no of iterations in game of life
       for(int i = 0; i<4;i++){
           //if(i==0) t:>startTime;
           for (int x = 0; x < IMHT; x++){
@@ -345,7 +347,7 @@ chan c_timer;                      //channel for timer
 par {
     on tile[0] : i2c_master(i2c, 1, p_scl, p_sda, 10);   //server thread providing orientation data
     on tile[0] : orientation(i2c[0],c_control);        //client thread reading orientation data
-    on tile[0] : DataInStream("test.pgm", c_inIO);          //thread to read in a PGM image
+    on tile[0] : DataInStream("7th.pgm", c_inIO);          //thread to read in a PGM image
     on tile[0] : DataOutStream("testout.pgm", c_outIO);       //thread to write out a PGM image
     on tile[0] : distributor(workers, c_inIO, c_outIO, c_control, c_timer); //thread to coordinate work on image
     on tile[0] : timing(c_timer);
