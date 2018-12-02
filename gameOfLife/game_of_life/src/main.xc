@@ -124,7 +124,7 @@ void performRules(uchar grid[IMHT][IMWD/NoofThreads + 2]) {
 }
 
 // worker thread that handles the part of the grid given
-void worker(streaming chanend fromDistr) {
+void worker(chanend fromDistr) {
     uchar partOfGrid[IMHT][IMWD/NoofThreads + 2];
     uchar val;
     while(1){ //no of iterations of game of life - 100 iterations
@@ -155,7 +155,7 @@ int noOfLiveCells(uchar grid[IMHT][IMWD]){ //returns the no of live cells in the
     return liveCells;
 }
 
-void distributor(streaming chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, chanend fromAcc
+void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, chanend fromAcc
         , chanend toTimer, chanend fromButton, chanend toLEDs)
 {
 
@@ -420,7 +420,7 @@ i2c_master_if i2c[1];               //interface to orientation
 
 
 chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
-streaming chan workers[NoofThreads];          //worker threads
+chan workers[NoofThreads];          //worker threads
 chan c_timer;                       //channel for timer
 chan c_buttons;                     //channel for buttons
 chan c_LEDs;                        //channel for LEDs
