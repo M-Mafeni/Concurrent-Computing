@@ -19,6 +19,8 @@ typedef unsigned char uchar;      //using uchar as shorthand
 on tile[0]: port p_scl = XS1_PORT_1E;         //interface ports to orientation
 on tile[0]: port p_sda = XS1_PORT_1F;
 on tile[0] : in port buttons = XS1_PORT_4E; //port to access xCore-200 buttons
+on tile[0] : out port leds = XS1_PORT_4F;   //port to access xCore-200 LEDs
+
 
 #define FXOS8700EQ_I2C_ADDR 0x1E  //register addresses for orientation
 #define FXOS8700EQ_XYZ_DATA_CFG_REG 0x0E
@@ -153,29 +155,43 @@ int noOfLiveCells(uchar grid[IMHT][IMWD]){ //returns the no of live cells in the
     return liveCells;
 }
 
-void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, chanend fromAcc, chanend toTimer, chanend fromButton)
+void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, chanend fromAcc
+        , chanend toTimer, chanend fromButton, chanend toLEDs)
 {
+
   uchar val;
   Grid grid;
   int buttonPressed;
   timer readTimer;
   unsigned int startRead;
   unsigned int stopRead;
+  unsigned int pattern; //1st bit...separate green LED
+                 //2nd bit...blue LED
+                 //3rd bit...green LED
+                 //4th bit...red LED
+  /*LED Patterns
+   SW1 : reading = 0100 ,processing: alternate between 0001 and 0000
+   SW2 : 0010
+   Tilting : 1000
+       */
 
   //Starting up and wait for tilting of the xCore-200 Explorer
   printf( "ProcessImage: Start, size = %dx%d\n", IMHT, IMWD );
   printf( "Press SW1 button...\n" );
   //fromAcc :> int value;
-  fromButton :> buttonPressed; // receive button information
-
-
-
+  while(1){
+      fromButton :> buttonPressed; // receive button information
+      if(buttonPressed == 14) break;
+  }
   //Read in and do something with your image values..
   //This just inverts every pixel, but you should
   //change the image according to the "Game of Life"
   printf( "Processing...\n" );
 
   readTimer :> startRead;
+  //read pattern
+  pattern = 0x4;
+  toLEDs <: pattern;
   for( int y = 0; y < IMHT; y++ ) {   //go through all lines
     for( int x = 0; x < IMWD; x++ ) { //go through each pixel per line
       c_in :> val;                    //read the pixel value
@@ -183,14 +199,13 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
     }
   }
   readTimer :> stopRead;
-
-  int gameOfLifeCond = (buttonPressed == 14) ? 1 : 0; // SW1 is pressed
   int tilted = 0;
 
   toTimer <: 1;
   int iteration = 0;
 
   uchar partOfGrid[IMHT][IMWD/NoofThreads + 2];
+  int gameOfLifeCond = (buttonPressed == 14) ? 1 : 0; // SW1 is pressed
   while(gameOfLifeCond) { //no of iterations in game of life - 100 iterations
       select {
           case fromButton :> buttonPressed:
@@ -205,6 +220,8 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
 
       if(tilted){
           //print out info
+          pattern = 0x8;
+          toLEDs <: pattern;
           int liveCells = noOfLiveCells(grid.grid);
           float timeTaken = (stopRead-startRead)/100000.0;
           printf("Game of Life Status Report: \n");
@@ -214,8 +231,9 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
       }
 
       printf("Performing iteration %d\n", iteration);
+      pattern = (iteration%2 == 0) ? 0x1 : 0x0;
+      toLEDs <: pattern;
       iteration++;
-
       for(int i = 0; i<NoofThreads;i++){
           for (int x = 0; x < IMHT; x++){
               for (int y = (IMWD/NoofThreads)*i; y < (IMWD/NoofThreads)*(i+1); y++) {
@@ -253,6 +271,9 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
   }
   toTimer <: 0;
 //print the picture
+  //write pattern
+  pattern = 0x2;
+  toLEDs <: pattern;
   for( int y = 0; y < IMHT; y++ ) {   //go through all lines
       for( int x = 0; x < IMWD; x++ ) { //go through each pixel per line
          c_out <: grid.grid[y][x]; // output the resulting grid of this iteration
@@ -265,6 +286,7 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
   toTimer :> totalTime;
 
   printf("\ntime = %.2f milliseconds \n",totalTime);
+
 }
 
 // Timing thread
@@ -382,6 +404,18 @@ void buttonListener(in port b, chanend toDistr) {
   printf("\nbutton thread has ended\n");
 
 }
+//display correct LED pattern
+int showLEDs(out port p, chanend fromDistributor) {
+  int pattern; //1st bit...separate green LED
+               //2nd bit...blue LED
+               //3rd bit...green LED
+               //4th bit...red LED
+  while (1) {
+    fromDistributor :> pattern;   //receive new pattern from visualiser
+    p <: pattern;                //send pattern to LED port
+  }
+  return 0;
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -394,18 +428,20 @@ i2c_master_if i2c[1];               //interface to orientation
 
 
 chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
-chan workers[NoofThreads];                 //worker threads
-chan c_timer;                      //channel for timer
-chan c_buttons;                    //channel for buttons
+chan workers[NoofThreads];          //worker threads
+chan c_timer;                       //channel for timer
+chan c_buttons;                     //channel for buttons
+chan c_LEDs;                        //channel for LEDs
 
 par {
     on tile[0] : i2c_master(i2c, 1, p_scl, p_sda, 10);   //server thread providing orientation data
     on tile[0] : orientation(i2c[0],c_control);        //client thread reading orientation data
     on tile[0] : DataInStream("test.pgm", c_inIO);          //thread to read in a PGM image
     on tile[0] : DataOutStream("testout.pgm", c_outIO);       //thread to write out a PGM image
-    on tile[0] : distributor(workers, c_inIO, c_outIO, c_control, c_timer, c_buttons); //thread to coordinate work on image
+    on tile[0] : distributor(workers, c_inIO, c_outIO, c_control, c_timer, c_buttons, c_LEDs); //thread to coordinate work on image
     on tile[0] : timing(c_timer);
     on tile[0] : buttonListener(buttons, c_buttons);
+    on tile[0] : showLEDs(leds,c_LEDs);
     par(int i =0; i<NoofThreads; i++){
         on tile[1] : worker(workers[i],i);
     }
