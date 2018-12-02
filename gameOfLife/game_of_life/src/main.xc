@@ -204,7 +204,6 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
   toTimer <: 1;
   int iteration = 0;
 
-  uchar partOfGrid[IMHT][IMWD/NoofThreads + 2];
   int gameOfLifeCond = (buttonPressed == 14) ? 1 : 0; // SW1 is pressed
   while(gameOfLifeCond) { //no of iterations in game of life - 100 iterations
       select {
@@ -237,27 +236,19 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
       for(int i = 0; i<NoofThreads;i++){
           for (int x = 0; x < IMHT; x++){
               for (int y = (IMWD/NoofThreads)*i; y < (IMWD/NoofThreads)*(i+1); y++) {
-                  // put the cell into partOfGrid, with width IMWD/4, and offsetted by 1 for the extra col on the left
-                  partOfGrid[x][y % (IMWD/NoofThreads) + 1] = grid.grid[x][y];
-
                   if(y == (IMWD/NoofThreads)*i) { // left most column of the section
-                      partOfGrid[x][0] = grid.grid[x][(y-1 +IMWD)%IMWD]; // store it in left most column of partOfGrid
-                      toWorkers[i] <: partOfGrid[x][0]; // send the extra cell on the left
-
-                      toWorkers[i] <: partOfGrid[x][y % (IMWD/NoofThreads) + 1]; // send the current cell
+                      toWorkers[i] <: grid.grid[x][(y-1 +IMWD)%IMWD]; // send the extra cell on the left
+                      toWorkers[i] <: grid.grid[x][y]; // send the current cell
                   }
                   else if(y == (IMWD/NoofThreads)*(i+1) -1) { // right most column of the section
-                      toWorkers[i] <: partOfGrid[x][y % (IMWD/NoofThreads) + 1]; // send the current cell
-
-                      partOfGrid[x][IMWD/NoofThreads + 1] = grid.grid[x][(y+1)%IMWD]; // store it in the right most column of partOfGrid
-                      toWorkers[i] <: partOfGrid[x][IMWD/NoofThreads + 1]; // send the extra cell on the right
+                      toWorkers[i] <: grid.grid[x][y]; // send the current cell
+                      toWorkers[i] <: grid.grid[x][(y+1)%IMWD]; // send the extra cell on the right
                   }
                   else { // not on either end of partOfGrid
-                      toWorkers[i] <: partOfGrid[x][y % (IMWD/NoofThreads) + 1]; // only send the current cell
+                      toWorkers[i] <: grid.grid[x][y]; // only send the current cell
                   }
               }
           }
-
       }
 
       for (int i = 0; i<NoofThreads; i++) {
@@ -284,6 +275,7 @@ void distributor(chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, cha
   printf( "\nOne processing round completed...\n" );
   float totalTime;
   toTimer :> totalTime;
+  toLEDs <: 0; //turn off leds
 
   printf("\ntime = %.2f milliseconds \n",totalTime);
 
