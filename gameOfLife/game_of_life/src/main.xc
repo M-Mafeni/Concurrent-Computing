@@ -9,9 +9,9 @@
 #include <assert.h>
 #include <stdbool.h>
 
-#define  IMHT 16                  //image height
-#define  IMWD 16                  //image width
-#define  NoofThreads 4            // no of worker threads that we'll have
+#define  IMHT 256                  //image height
+#define  IMWD 256                  //image width
+#define  NoofThreads 8            // no of worker threads that we'll have
 #define  IterationCount 100       // number of iterations of game of life
 
 typedef unsigned char uchar;      //using uchar as shorthand
@@ -127,110 +127,48 @@ void performRules(uchar grid[IMHT][IMWD/NoofThreads + 2]) {
 void worker(chanend fromDistr, chanend toPrev, chanend toNext, int workerNumber) {
     uchar partOfGrid[IMHT][IMWD/NoofThreads + 2];
     uchar val;
-    uchar value;
-    int gameEnded = 0;
-    //printf("worker %d, prev %d. next %d\n", workerNumber, (workerNumber-1+NoofThreads)%NoofThreads, (workerNumber+1)%NoofThreads);
-    while(1){ //always ready to receive information from the distributor
-        for (int i = 0; i < IMHT; i++) {
-                for (int j = 1; j < IMWD/NoofThreads + 1; j++) {
-                    fromDistr :> val;
+    int gameEnded = 0; // game has not ended
 
-                    if (workerNumber%2 == 1)  { // odd worker receives
-                        partOfGrid[i][j] = val;
-                        //printf("worker %d, j = %d \n", workerNumber, j);
-                        if (j == 1) {
-                            //printf("send\n");
-                            //printf("worker %d is going to receive from worker %d\n", workerNumber, (workerNumber-1+NoofThreads)%NoofThreads);
-                            toPrev :> value;
-                            partOfGrid[i][0] = value;
 
-                        }
-                        else if (j == IMWD/NoofThreads) {
-                            //printf("hi\n");
-                            //printf("worker %d is going to receive from worker %d\n", workerNumber, (workerNumber+1)%NoofThreads);
-                            toNext :> value;
-                            partOfGrid[i][5] = value;
-                            //if (workerNumber == 1) printf("worker %d received %d from worker %d, i = %d \n", workerNumber, value, (workerNumber + 1)%NoofThreads, i);
-                        }
-                        //printf("worker %d has sent\n", workerNumber);
-                    }
-                    else { // even worker sends
-                        int newJ = IMWD/NoofThreads - j + 1;
-                        partOfGrid[i][newJ] = val;
-                        //printf("worker %d, j = %d \n", workerNumber, newJ);
-                        if (newJ == 1) {
-                            //printf("hi\n");
-                            //printf("worker %d is going to send to worker %d\n", workerNumber, (workerNumber-1+NoofThreads)%NoofThreads);
-                            toPrev <: val;
-                            //printf("worker %d sent to worker %d\n", workerNumber, (workerNumber-1+NoofThreads)%NoofThreads);
-
-                        }
-                        else if (newJ == IMWD/NoofThreads) {
-                            //printf("hi\n");
-                            //printf("worker %d is going to send to worker %d\n", workerNumber, (workerNumber+1)%NoofThreads);
-                            toNext <: val;
-                            //printf("worker %d sent to worker %d\n", workerNumber, (workerNumber+1)%NoofThreads);
-                        }
-                        //printf("worker %d has received\n", workerNumber);
-                    }
-
-                }
+    // get the grid from distributor
+    for (int i = 0; i < IMHT; i++) {
+        for (int j = 1; j < IMWD/NoofThreads + 1; j++) {
+            fromDistr :> val;
+            partOfGrid[i][j] = val;
         }
+     }
 
+    // exchange extra cells between workers
+    while(!gameEnded){ //always ready to perform next iteration until gameEnded is true
         for (int i = 0; i < IMHT; i++) {
-            for (int j = 1; j < IMWD/NoofThreads + 1; j++) {
-                uchar value;
-
-                if (workerNumber%2 == 1)  { // odd worker sends
-                    int newJ = IMWD/NoofThreads - j + 1;
-                    //printf("worker %d, j = %d \n", workerNumber, newJ);
-                    if (newJ == 1) {
-                         toPrev <: partOfGrid[i][newJ];
-                        //printf("worker sends\n");
-                    }
-                    else if (newJ == IMWD/NoofThreads) {
-                        toNext <: partOfGrid[i][newJ];
-                    }
-                    //printf("worker %d has sent\n", workerNumber);
-                }
-                else { // even worker receives
-                    //printf("worker %d, j = %d \n", workerNumber, j);
-                    if (j == 1) {
-                        toPrev :> value;
-                        partOfGrid[i][0] = value;
-                        //printf("worker %d receives %d\n", workerNumber, value);
-
-                    }
-                    else if (j == IMWD/NoofThreads) {
-                        toNext :> value;
-                        partOfGrid[i][5] = value;
-                        //if (workerNumber == 0) printf("worker %d received %d from worker %d, i = %d \n", workerNumber, value, (workerNumber + 1)%NoofThreads, i);
-
-                    }
-                    //printf("worker %d has received\n", workerNumber);
-                }
+            // odd worker
+            if (workerNumber%2 == 1)  {
+                toPrev :> partOfGrid[i][0]; // get leftmost extra cell from left neighbouring worker
+                toNext :> partOfGrid[i][IMWD/NoofThreads + 1]; // get rightmost extra cell from right neighbouring worker
+                toPrev <: partOfGrid[i][1]; // send leftmost cell of this part of grid to left neighbouring worker
+                toNext <: partOfGrid[i][IMWD/NoofThreads]; // send the rightmost cell of this part of grid to right neighbouring worker
+            }
+            // even worker
+            else {
+                toNext <: partOfGrid[i][IMWD/NoofThreads]; // send the rightmost cell of this part of grid to right neighbouring worker
+                toPrev <: partOfGrid[i][1]; // send leftmost cell of this part of grid to left neighbouring worker
+                toNext :> partOfGrid[i][IMWD/NoofThreads + 1]; // get rightmost extra cell from right neighbouring worker
+                toPrev :> partOfGrid[i][0]; // get leftmost extra cell from left neighbouring worker
             }
         }
-//        for (int i = 0; i < IMHT; i++) {
-//            for (int j = 0; j < IMWD/NoofThreads + 2; j++) {
-//                if (workerNumber == 2) {
-//                    printf("%d    ", partOfGrid[i][j]);
-//                    if (j == IMWD/NoofThreads+1) printf("\n");
-//                }
-//            }
-//        }
-        //printf("worker %d has received everything\n", workerNumber);
+
+        fromDistr :> gameEnded; // get gameEnded data from distributor
+
         performRules(partOfGrid);
+    }
 
-        fromDistr :> gameEnded;
-        if (gameEnded) {
-            for (int i = 0; i < IMHT; i++) {
-                for (int j = 1; j < IMWD/NoofThreads + 1; j++) {
-                    fromDistr <: partOfGrid[i][j];
-                }
-            }
+    // send this part of grid back to distributor
+    for (int i = 0; i < IMHT; i++) {
+        for (int j = 1; j < IMWD/NoofThreads + 1; j++) {
+            fromDistr <: partOfGrid[i][j];
         }
     }
+
 }
 
 //returns the no of live cells in the grid
@@ -294,15 +232,25 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
 
   readTimer :> stopRead; // stop timing how long it takes to read image
 
-  toTimer <: 1; // start timing the processing stage
 
+
+  //send the grid
+  for (int x = 0; x < IMHT; x++) {
+    for (int y = 0; y < (IMWD/NoofThreads); y++) {
+        for (int i = 0; i < NoofThreads; i++) {
+           toWorkers[i] <: grid.grid[x][y + (IMWD/NoofThreads)*i];
+        }
+     }
+  }
+
+  toTimer <: 1; // start timing the processing stage
 
   int gameOfLifeCond = (buttonPressed == 14) ? 1 : 0; //1 if SW1 is pressed
 
   while(gameOfLifeCond && iteration < 100) { //runs until SW2 is pressed
       select {
           case fromButton :> buttonPressed:
-              if (buttonPressed == 13) gameOfLifeCond = 0;
+              if (buttonPressed == 13) gameOfLifeCond = 0; // this is the last iteration
               break;
           case fromAcc :> int value:
               tilted = 1; // board has been tilted
@@ -325,47 +273,31 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
 
       printf("Performing iteration %d\n", iteration);
 
+      for (int i = 0; i<NoofThreads; i++) {
+           toWorkers[i] <: 0; // send 0 to all workers indicating the game has not ended
+        }
+
       pattern = (iteration%2 == 0) ? 0x1 : 0x0; // LEDs alternate when processing
       toLEDs <: pattern;
       iteration++;
-
-      //int newJ = IMWD/NoofThreads - j + 1
-      for (int x = 0; x < IMHT; x++) {
-          for (int y = 0; y < (IMWD/NoofThreads); y++) {
-              for (int i = 0; i < NoofThreads; i++) {
-                  if (i%2 == 1) {
-                      //printf("%d, %d\n", i, y + (IMWD/NoofThreads)*i);
-                      toWorkers[i] <: grid.grid[x][y + (IMWD/NoofThreads)*i]; // only send the current cell
-                  }
-                  else {
-                      //printf("%d, %d\n", i, ((IMWD/NoofThreads-1 - y) + (IMWD/NoofThreads)*i));
-                      toWorkers[i] <: grid.grid[x][((IMWD/NoofThreads-1 - y) + (IMWD/NoofThreads)*i)]; // only send the current cell
-                  }
-
-
-              }
-          }
-      }
-
-      for (int i = 0; i<NoofThreads; i++) {
-          if (!gameOfLifeCond) {
-          toWorkers[i] <: 1;
-          ///assembly
-              for (int x = 0; x < IMHT; x++) {
-                  for (int y = 0; y < IMWD/NoofThreads; y++) {
-                      toWorkers[i]:>grid.grid[x][i*(IMWD/NoofThreads) + y];
-                  }
-              }
-          }
-          else toWorkers[i] <: 0;
-      }
   }
 
   toTimer <: 0;
-//print the picture
+  for (int i = 0; i<NoofThreads; i++) {
+      ///assembly
+      toWorkers[i] <: 1; // send 1 to all workers indicating the game has ended
+      for (int x = 0; x < IMHT; x++) {
+          for (int y = 0; y < IMWD/NoofThreads; y++) {
+              toWorkers[i]:>grid.grid[x][i*(IMWD/NoofThreads) + y];
+          }
+      }
+  }
+
   //write pattern
   pattern = 0x2;
   toLEDs <: pattern;
+
+  //print the picture
   for( int y = 0; y < IMHT; y++ ) {   //go through all lines
       for( int x = 0; x < IMWD; x++ ) { //go through each pixel per line
          c_out <: grid.grid[y][x]; // output the resulting grid of this iteration
@@ -524,10 +456,6 @@ i2c_master_if i2c[1];               //interface to orientation
 chan c_inIO, c_outIO, c_control;    //extend your channel definitions here
 chan workers[NoofThreads];          //for workers to communicate with distributor
 chan betweenWorkers[NoofThreads];   //for workers to communicate with each other
-//chan worker1;
-//chan worker2;
-//chan worker3;
-//chan worker4;
 chan c_timer;                       //channel for timer
 chan c_buttons;                     //channel for buttons
 chan c_LEDs;                        //channel for LEDs
@@ -535,7 +463,7 @@ chan c_LEDs;                        //channel for LEDs
 par {
     on tile[0] : i2c_master(i2c, 1, p_scl, p_sda, 10);   //server thread providing orientation data
     on tile[0] : orientation(i2c[0],c_control);        //client thread reading orientation data
-    on tile[0] : DataInStream("test.pgm", c_inIO);          //thread to read in a PGM image
+    on tile[0] : DataInStream("256x256.pgm", c_inIO);          //thread to read in a PGM image
     on tile[0] : DataOutStream("testout.pgm", c_outIO);       //thread to write out a PGM image
     on tile[0] : distributor(workers, c_inIO, c_outIO, c_control, c_timer, c_buttons, c_LEDs); //thread to coordinate work on image
     on tile[0] : timing(c_timer);
@@ -544,10 +472,6 @@ par {
     par(int i =0; i<NoofThreads; i++){
         on tile[1] : worker(workers[i], betweenWorkers[i], betweenWorkers[(i+1) % NoofThreads], i);
     }
-//    on tile[1] : worker(workers[0], worker4, worker1, 0);
-//    on tile[1] : worker(workers[1], worker1, worker2, 1);
-//    on tile[1] : worker(workers[2], worker2, worker3, 2);
-//    on tile[1] : worker(workers[3], worker3, worker4, 3);
   }
 
   return 0;
