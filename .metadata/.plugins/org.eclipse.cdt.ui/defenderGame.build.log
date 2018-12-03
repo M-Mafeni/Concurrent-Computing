@@ -1,8 +1,8 @@
-10:12:09 **** Clean-only build of configuration Default for project defenderGame ****
+18:14:02 **** Clean-only build of configuration Default for project defenderGame ****
 xmake CONFIG=Default clean 
 Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/defenderGame
 rm -rf './bin/'
 rm -rf '.build'
 
-10:12:10 Build Finished (took 126ms)
+18:14:02 Build Finished (took 187ms)
 
