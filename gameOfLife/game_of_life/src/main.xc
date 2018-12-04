@@ -241,11 +241,11 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
               break;
           case fromAcc :> int value:
               tilted = 1; // board has been tilted
-              printf("\n tilted value received \n");
               break;
           default:
               break; // run the current iteration
       }
+      toTimer :> timeElapsed;
 
       if(tilted){
           //print out game state when board is tilted
@@ -254,15 +254,11 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
           pattern = 0x8;
           toLEDs <: pattern;
           int liveCells = noOfLiveCells(grid.grid);
-          toTimer <: 0; //stop timer
-          toTimer :> timeElapsed;
           printf("\nGame of Life Status Report: \n");
-          printf("Number of rounds processed: %d \nLive cells: %d\nTime elapsed since image read in: %.3f seconds.\n\n", iteration, liveCells, timeElapsed);
+          printf("Number of rounds processed: %d \nLive cells: %d\nTime elapsed since image read in: %.3lf seconds.\n\n", iteration, liveCells, timeElapsed);
           fromAcc :> int value; // waits for the board to be horizontal again
           tilted = 0;
       }
-
-    //  printf("Performing iteration %d\n", iteration);
 
       for (int i = 0; i<NoofThreads; i++) {
            toWorkers[i] <: 0; // send 0 to all workers indicating the game has not ended
@@ -304,19 +300,27 @@ void timing(chanend toDistr) {
     unsigned int startTime;
     unsigned int endTime;
     unsigned int noOf42 = 0;  //store the amount of time 42 occurs
-    int isTime;
+    int isTime = 0;
+    double endOfPeriod = pow(2,32) - 1; //the maximum value that the timer ticks up to
+    double period42 = endOfPeriod/pow(10,8); //maximum time the timer can record
+    if(!isTime){ //timing hasn't started
+    toDistr :> isTime; // distributor signals timing thread when timing starts
+    t :> startTime;
+    }
+
     while(1) {
-        toDistr :> isTime; // distributor signals timing thread when timing starts
-        if (isTime) t :> startTime; // get initial time
-        else {
-            float totalTime = 0;
-            t :> endTime; // get final time
-            float period = (endTime-startTime)/100000000.0; //timer ticks at 100,000,000 Hz
-            totalTime += (noOf42 * 42); //add back all the 42s
-            if(period > 42) noOf42 += 1;
+        float totalTime = 0;
+     //   printf("timing \n");
+        t :> endTime; // get final time
+        float period = (endTime-startTime)/100000000.0; //timer ticks at 100,000,000 Hz
+        if(period >= 42.92){ //close to the max value
+            noOf42 += 1;
+            printf(" noOf42 =%d \n",noOf42);
+        }else{
             totalTime += period;
-            toDistr <: totalTime;
         }
+        totalTime += (noOf42 * period42); //add back all the 42s
+        toDistr <: totalTime;
     }
 
 }
