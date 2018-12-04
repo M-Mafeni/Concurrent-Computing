@@ -8,6 +8,8 @@
 #include "i2c.h"
 #include <assert.h>
 #include <stdbool.h>
+#include <math.h>
+
 
 #define  IMHT 16                  //image height
 #define  IMWD 16                  //image width
@@ -129,7 +131,6 @@ void worker(chanend fromDistr, chanend toPrev, chanend toNext, int workerNumber)
     uchar val;
     int gameEnded = 0; // game has not ended
 
-
     // get the grid from distributor
     for (int i = 0; i < IMHT; i++) {
         for (int j = 1; j < IMWD/NoofThreads + 1; j++) {
@@ -187,22 +188,15 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
 {
 
   uchar val;
-  Grid grid; // game of life grid
-  int buttonPressed; // stores button information from fromButtons
-  timer readTimer;
-  int tilted = 0; // 1 if the board has been tilted
-  int iteration = 0; // counts number of iterations already done
-  unsigned int startRead;
-  unsigned int stopRead;
-  unsigned int pattern; //1st bit...separate green LED
-                        //2nd bit...blue LED
-                        //3rd bit...green LED
-                        //4th bit...red LED
-  /*LED Patterns
-   SW1 : reading = 0100 ,processing: alternate between 0001 and 0000
-   SW2 : 0010
-   Tilting : 1000
-       */
+  Grid grid;             // game of life grid
+  int buttonPressed;     // stores button information from fromButtons
+  int tilted = 0;        // 1 if the board has been tilted
+  int iteration = 0;     // counts number of iterations already done
+  float timeElapsed = 0; // stores the time elapsed after reading in the image
+  unsigned int pattern;  // 1st bit...separate green LED
+                         // 2nd bit...blue LED
+                         // 3rd bit...green LED
+                         // 4th bit...red LED
 
   //Starting up and wait for pressing SW1 on the xCore-200 Explorer
   printf( "ProcessImage: Start, size = %dx%d\n", IMHT, IMWD );
@@ -215,9 +209,6 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
 
   printf( "Processing...\n" );
 
-  // start timing how long it takes to read image
-  readTimer :> startRead;
-
   //LED pattern when reading
   pattern = 0x4;
   toLEDs <: pattern;
@@ -229,11 +220,7 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
       grid.grid[y][x] = val;          //initialise the grid array
     }
   }
-
-  readTimer :> stopRead; // stop timing how long it takes to read image
-
   toTimer <: 1; // start timing the processing stage
-
   //send the grid
   for (int x = 0; x < IMHT; x++) {
     for (int y = 0; y < (IMWD/NoofThreads); y++) {
@@ -243,39 +230,45 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
      }
   }
 
+
+
   int gameOfLifeCond = (buttonPressed == 14) ? 1 : 0; //1 if SW1 is pressed
 
-  while(gameOfLifeCond && iteration < 100) { //runs until SW2 is pressed
+  while(gameOfLifeCond) { //runs until SW2 is pressed
       select {
           case fromButton :> buttonPressed:
               if (buttonPressed == 13) gameOfLifeCond = 0; // this is the last iteration
               break;
           case fromAcc :> int value:
               tilted = 1; // board has been tilted
+              printf("\n tilted value received \n");
               break;
           default:
               break; // run the current iteration
       }
 
       if(tilted){
-          //print out info when board is tilted
+          //print out game state when board is tilted
+
+          //LED Pattern when the board is tilted
           pattern = 0x8;
           toLEDs <: pattern;
           int liveCells = noOfLiveCells(grid.grid);
-          float timeTaken = (stopRead-startRead)/100000.0;
-          printf("Game of Life Status Report: \n");
-          printf("Number of rounds processed: %d \nLive cells: %d\nTime taken to read in image: %.2f milliseconds.\n", iteration, liveCells, timeTaken);
+          toTimer <: 0; //stop timer
+          toTimer :> timeElapsed;
+          printf("\nGame of Life Status Report: \n");
+          printf("Number of rounds processed: %d \nLive cells: %d\nTime elapsed since image read in: %.3f seconds.\n\n", iteration, liveCells, timeElapsed);
           fromAcc :> int value; // waits for the board to be horizontal again
           tilted = 0;
       }
 
-      //printf("Performing iteration %d\n", iteration);
+    //  printf("Performing iteration %d\n", iteration);
 
       for (int i = 0; i<NoofThreads; i++) {
            toWorkers[i] <: 0; // send 0 to all workers indicating the game has not ended
         }
 
-      pattern = (iteration%2 == 0) ? 0x1 : 0x0; // LEDs alternate when processing
+      pattern = (iteration%2 == 0) ? 0x1 : 0x0; // LED alternates when processing
       toLEDs <: pattern;
       iteration++;
   }
@@ -289,13 +282,10 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
           }
       }
   }
-  toTimer <: 0;
 
-
-  //write pattern
+  //LED Pattern when writing to testout.pgm
   pattern = 0x2;
   toLEDs <: pattern;
-
   //print the picture
   for( int y = 0; y < IMHT; y++ ) {   //go through all lines
       for( int x = 0; x < IMWD; x++ ) { //go through each pixel per line
@@ -305,12 +295,7 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
 
 
   printf( "\nOne processing round completed...\n" );
-  float totalTime;
-  toTimer :> totalTime;
   toLEDs <: 0; //turn off leds
-
-  printf("\ntime = %.2f milliseconds \n",totalTime);
-
 }
 
 // Timing thread
@@ -318,18 +303,22 @@ void timing(chanend toDistr) {
     timer t;
     unsigned int startTime;
     unsigned int endTime;
+    unsigned int noOf42 = 0;  //store the amount of time 42 occurs
     int isTime;
-
     while(1) {
         toDistr :> isTime; // distributor signals timing thread when timing starts
         if (isTime) t :> startTime; // get initial time
         else {
+            float totalTime = 0;
             t :> endTime; // get final time
-            break;
+            float period = (endTime-startTime)/100000000.0; //timer ticks at 100,000,000 Hz
+            totalTime += (noOf42 * 42); //add back all the 42s
+            if(period > 42) noOf42 += 1;
+            totalTime += period;
+            toDistr <: totalTime;
         }
     }
-    float totalTime = (endTime-startTime)/100000.0; //timer ticks at 100,000,000 Hz
-    toDistr <: totalTime;
+
 }
 
 
@@ -412,7 +401,6 @@ void orientation( client interface i2c_master_if i2c, chanend toDist) {
           tilted = 1 - tilted;
           toDist <: 1;
       }
-
     }
   }
 }
@@ -429,6 +417,7 @@ void buttonListener(in port b, chanend toDistr) {
   printf("\nbutton thread has ended\n");
 
 }
+
 //display correct LED pattern
 int showLEDs(out port p, chanend fromDistributor) {
   int pattern; //1st bit...separate green LED
