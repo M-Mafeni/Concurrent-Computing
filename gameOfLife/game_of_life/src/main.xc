@@ -253,11 +253,9 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
           pattern = 0x8;
           toLEDs <: pattern;
           int liveCells = noOfLiveCells(grid.grid);
-          //printf("Processing paused\n");
           printf("\nGame of Life Status Report: \n");
           printf("Number of rounds processed: %d \nLive cells: %d\nTime elapsed since image read in: %.3lf seconds.\n\n", iteration, liveCells, timeElapsed);
           fromAcc :> int value; // waits for the board to be horizontal again
-          //printf("Processing continued\n");
           tilted = 0;
       }
 
@@ -315,16 +313,11 @@ void timing(chanend toDistr) {
     while(1) {
         float totalTime = 0;
         t :> endTime; // get final time
-        //printf("%f\n", endTime/100000000.0);
         float period = (endTime-startTime)/100000000.0; //timer ticks at 100,000,000 Hz
         if(period >= 42.92){ //close to the max value
             noOf42 += 1;
         }
-//        else{
-//            totalTime += period;
-//        }
         totalTime = period + (noOf42 * period42); //add back all the 42s
-       // printf("%f\n", totalTime);
         toDistr <: totalTime;
     }
 
