@@ -11,9 +11,9 @@
 #include <math.h>
 
 
-#define  IMHT 256                  //image height
-#define  IMWD 256                 //image width
-#define  NoofThreads 8            // no of worker threads that we'll have
+#define  IMHT 16                  //image height
+#define  IMWD 16                 //image width
+#define  NoofThreads 4            // no of worker threads that we'll have
 
 typedef unsigned char uchar;      //using uchar as shorthand
 
@@ -156,10 +156,8 @@ void worker(chanend fromDistr, chanend toPrev, chanend toNext, int workerNumber)
                 toPrev :> partOfGrid[i][0]; // get leftmost extra cell from left neighbouring worker
             }
         }
-
-        fromDistr :> gameEnded; // get gameEnded data from distributor
-
         performRules(partOfGrid);
+        fromDistr :> gameEnded; // get gameEnded data from distributor
     }
 
     // send this part of grid back to distributor
@@ -168,6 +166,7 @@ void worker(chanend fromDistr, chanend toPrev, chanend toNext, int workerNumber)
             fromDistr <: partOfGrid[i][j];
         }
     }
+
 
 }
 
@@ -206,7 +205,7 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
       if(buttonPressed == 14) break;
   }
 
-  printf( "Processing...\n" );
+  printf( "Reading image...\n" );
 
   //LED pattern when reading
   pattern = 0x4;
@@ -230,9 +229,11 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
      }
   }
 
+  printf( "Processing...\n" );
+
   int gameOfLifeCond = (buttonPressed == 14) ? 1 : 0; //1 if SW1 is pressed
 
-  while(gameOfLifeCond && iteration < 100) { //runs until SW2 is pressed
+  while(gameOfLifeCond) { //runs until SW2 is pressed
       select {
           case fromButton :> buttonPressed:
               if (buttonPressed == 13) gameOfLifeCond = 0; // this is the last iteration
@@ -244,7 +245,6 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
               break; // run the current iteration
       }
       toTimer :> timeElapsed;
-      //printf("timeelapsed: %.2f milliseconds \n", timeElapsed*1000);
 
       if(tilted){
           //print out game state when board is tilted
@@ -261,18 +261,19 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
           tilted = 0;
       }
 
-      for (int i = 0; i<NoofThreads; i++) {
-           toWorkers[i] <: 0; // send 0 to all workers indicating the game has not ended
-        }
+
 
       pattern = (iteration%2 == 0) ? 0x1 : 0x0; // LED alternates when processing
       toLEDs <: pattern;
       iteration++;
+
+      for (int i = 0; i<NoofThreads; i++) {
+                toWorkers[i] <: (!gameOfLifeCond); // send 0 to all workers indicating the game has not ended, 1 otherwise
+             }
   }
 
   for (int i = 0; i<NoofThreads; i++) {
       ///assembly
-      toWorkers[i] <: 1; // send 1 to all workers indicating the game has ended
       for (int x = 0; x < IMHT; x++) {
           for (int y = 0; y < IMWD/NoofThreads; y++) {
               toWorkers[i]:>grid.grid[x][i*(IMWD/NoofThreads) + y];
@@ -459,7 +460,7 @@ chan c_LEDs;                        //channel for LEDs
 par {
     on tile[0] : i2c_master(i2c, 1, p_scl, p_sda, 10);   //server thread providing orientation data
     on tile[0] : orientation(i2c[0],c_control);        //client thread reading orientation data
-    on tile[0] : DataInStream("256x256.pgm", c_inIO);          //thread to read in a PGM image
+    on tile[0] : DataInStream("test.pgm", c_inIO);          //thread to read in a PGM image
     on tile[0] : DataOutStream("testout.pgm", c_outIO);       //thread to write out a PGM image
     on tile[0] : distributor(workers, c_inIO, c_outIO, c_control, c_timer, c_buttons, c_LEDs); //thread to coordinate work on image
     on tile[0] : timing(c_timer);
