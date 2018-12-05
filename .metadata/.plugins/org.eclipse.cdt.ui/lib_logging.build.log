@@ -1,6 +1,6 @@
-23:33:46 **** Clean-only build of configuration Default for project lib_logging ****
+14:18:02 **** Clean-only build of configuration Default for project lib_logging ****
 xmake -f .makefile clean 
 ** Module only - only builds as part of application **
 
-23:33:46 Build Finished (took 115ms)
+14:18:02 Build Finished (took 98ms)
 

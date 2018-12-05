@@ -11,10 +11,9 @@
 #include <math.h>
 
 
-#define  IMHT 16                  //image height
-#define  IMWD 16                  //image width
+#define  IMHT 256                  //image height
+#define  IMWD 256                 //image width
 #define  NoofThreads 8            // no of worker threads that we'll have
-#define  IterationCount 100       // number of iterations of game of life
 
 typedef unsigned char uchar;      //using uchar as shorthand
 
@@ -64,9 +63,9 @@ void DataInStream(char infname[], chanend c_out)
     _readinline( line, IMWD );
     for( int x = 0; x < IMWD; x++ ) {
       c_out <: line[ x ];
-     printf( "-%4.1d ", line[ x ] ); //show image values
-    }
-    printf( "\n" );
+//     printf( "-%4.1d ", line[ x ] ); //show image values
+      }
+//    printf( "\n" );
   }
 
   //Close PGM image file
@@ -221,6 +220,7 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
     }
   }
   toTimer <: 1; // start timing the processing stage
+
   //send the grid
   for (int x = 0; x < IMHT; x++) {
     for (int y = 0; y < (IMWD/NoofThreads); y++) {
@@ -230,11 +230,9 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
      }
   }
 
-
-
   int gameOfLifeCond = (buttonPressed == 14) ? 1 : 0; //1 if SW1 is pressed
 
-  while(gameOfLifeCond) { //runs until SW2 is pressed
+  while(gameOfLifeCond && iteration < 100) { //runs until SW2 is pressed
       select {
           case fromButton :> buttonPressed:
               if (buttonPressed == 13) gameOfLifeCond = 0; // this is the last iteration
@@ -246,6 +244,7 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
               break; // run the current iteration
       }
       toTimer :> timeElapsed;
+      //printf("timeelapsed: %.2f milliseconds \n", timeElapsed*1000);
 
       if(tilted){
           //print out game state when board is tilted
@@ -254,9 +253,11 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
           pattern = 0x8;
           toLEDs <: pattern;
           int liveCells = noOfLiveCells(grid.grid);
+          //printf("Processing paused\n");
           printf("\nGame of Life Status Report: \n");
           printf("Number of rounds processed: %d \nLive cells: %d\nTime elapsed since image read in: %.3lf seconds.\n\n", iteration, liveCells, timeElapsed);
           fromAcc :> int value; // waits for the board to be horizontal again
+          //printf("Processing continued\n");
           tilted = 0;
       }
 
@@ -282,6 +283,8 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
   //LED Pattern when writing to testout.pgm
   pattern = 0x2;
   toLEDs <: pattern;
+
+  toTimer :> timeElapsed;
   //print the picture
   for( int y = 0; y < IMHT; y++ ) {   //go through all lines
       for( int x = 0; x < IMWD; x++ ) { //go through each pixel per line
@@ -289,8 +292,8 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
       }
   }
 
-
   printf( "\nOne processing round completed...\n" );
+  printf("time taken: %.2f milliseconds \n", timeElapsed*1000);
   toLEDs <: 0; //turn off leds
 }
 
@@ -310,16 +313,17 @@ void timing(chanend toDistr) {
 
     while(1) {
         float totalTime = 0;
-     //   printf("timing \n");
         t :> endTime; // get final time
+        //printf("%f\n", endTime/100000000.0);
         float period = (endTime-startTime)/100000000.0; //timer ticks at 100,000,000 Hz
         if(period >= 42.92){ //close to the max value
             noOf42 += 1;
-            printf(" noOf42 =%d \n",noOf42);
-        }else{
-            totalTime += period;
         }
-        totalTime += (noOf42 * period42); //add back all the 42s
+//        else{
+//            totalTime += period;
+//        }
+        totalTime = period + (noOf42 * period42); //add back all the 42s
+       // printf("%f\n", totalTime);
         toDistr <: totalTime;
     }
 
@@ -455,7 +459,7 @@ chan c_LEDs;                        //channel for LEDs
 par {
     on tile[0] : i2c_master(i2c, 1, p_scl, p_sda, 10);   //server thread providing orientation data
     on tile[0] : orientation(i2c[0],c_control);        //client thread reading orientation data
-    on tile[0] : DataInStream("test.pgm", c_inIO);          //thread to read in a PGM image
+    on tile[0] : DataInStream("256x256.pgm", c_inIO);          //thread to read in a PGM image
     on tile[0] : DataOutStream("testout.pgm", c_outIO);       //thread to write out a PGM image
     on tile[0] : distributor(workers, c_inIO, c_outIO, c_control, c_timer, c_buttons, c_LEDs); //thread to coordinate work on image
     on tile[0] : timing(c_timer);

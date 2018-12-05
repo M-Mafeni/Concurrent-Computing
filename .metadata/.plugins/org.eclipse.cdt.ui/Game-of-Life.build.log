@@ -1,8 +1,8 @@
-23:33:45 **** Clean-only build of configuration Default for project Game-of-Life ****
+14:18:01 **** Clean-only build of configuration Default for project Game-of-Life ****
 xmake clean 
 Cleaning /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-Computing/gameOfLife/game_of_life
 rm -rf './bin/'
 rm -rf '.build'
 
-23:33:46 Build Finished (took 451ms)
+14:18:02 Build Finished (took 521ms)
 

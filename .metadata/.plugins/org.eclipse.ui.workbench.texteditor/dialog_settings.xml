@@ -2,12 +2,14 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="isRegEx"/>
-		<item value="port p_scl" key="selection"/>
+		<item value="iteration" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="iteration"/>
+			<item value="assembling"/>
 			<item value="Port p_scl"/>
 			<item value="fromUser &lt;: gameEnded; fromAttacker &lt;: gameEnded;"/>
 			<item value="11"/>
