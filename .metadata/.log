@@ -3964,3 +3964,8 @@ java.io.FileNotFoundException: /Users/ainesh1998/Desktop/CS/2ndYear/Concurrent-C
 	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ui 4 0 2018-12-06 12:23:29.842
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
