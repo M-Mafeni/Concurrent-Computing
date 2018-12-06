@@ -1,6 +1,6 @@
-12:33:49 **** Clean-only build of configuration Default for project lib_i2c ****
+12:37:22 **** Clean-only build of configuration Default for project lib_i2c ****
 xmake -f .makefile clean 
 ** Module only - only builds as part of application **
 
-12:33:49 Build Finished (took 104ms)
+12:37:22 Build Finished (took 70ms)
 

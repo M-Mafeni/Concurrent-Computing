@@ -63,7 +63,9 @@ void DataInStream(char infname[], chanend c_out)
     _readinline( line, IMWD );
     for( int x = 0; x < IMWD; x++ ) {
       c_out <: line[ x ];
+//     printf( "-%4.1d ", line[ x ] ); //show image values
       }
+//    printf( "\n" );
   }
 
   //Close PGM image file
@@ -164,6 +166,8 @@ void worker(chanend fromDistr, chanend toPrev, chanend toNext, int workerNumber)
             fromDistr <: partOfGrid[i][j];
         }
     }
+
+
 }
 
 //returns the no of live cells in the grid
@@ -255,6 +259,8 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
           tilted = 0;
       }
 
+
+
       pattern = (iteration%2 == 0) ? 0x1 : 0x0; // LED alternates when processing
       toLEDs <: pattern;
       iteration++;
@@ -286,7 +292,7 @@ void distributor (chanend toWorkers[NoofThreads],chanend c_in, chanend c_out, ch
   }
 
   printf( "\nOne processing round completed...\n" );
-  printf("Total time taken: %.2f milliseconds \n", timeElapsed*1000);
+  printf("time taken: %.2f milliseconds \n", timeElapsed*1000);
   toLEDs <: 0; //turn off leds
 }
 
